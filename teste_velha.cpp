@@ -26,9 +26,9 @@ TEST(VerificarJogoTest, RegrasVioladasPorJogadorX) {
 
 TEST(VerificarJogoTest, RegrasVioladasPorJogadorO) {
     jogoVelha violado_o = {
-        {0, 0, 0},
-        {0, 0, 0},
-        {0, 0, 0}
+        {2, 2, 2},
+        {2, 2, 2},
+        {2, 2, 2}
     };
     int resultado = verificar_jogo(violado_o);
 
