@@ -71,9 +71,6 @@ cpplint:
 # Nova regra para rodar o Valgrind (verificador dinâmico)
 # Depende do executável de teste para garantir que ele esteja compilado.
 # --leak-check=full: Realiza uma verificação completa de vazamentos de memória.
-# NOTA: Valgrind não é nativamente compatível com Windows. Ele é para Linux/Unix.
-# Se você estiver no Windows, você precisará usar o WSL (Windows Subsystem for Linux)
-# ou uma VM Linux para usar o Valgrind.
 valgrind: $(TEST_EXEC)
 	@echo "Executando Valgrind para análise dinâmica (vazamentos de memória)..."
 	valgrind --leak-check=full ./$(TEST_EXEC)
@@ -88,8 +85,9 @@ docs:
 
 # Nova regra para executar todas as verificações de uma vez
 # Esta regra garante que todos os alvos listados sejam executados em sequência.
-# A ordem aqui é importante: teste -> cobertura -> cppcheck -> cpplint -> docs -> valgrind ------------------ADICIONAR.
-full_check: test coverage cppcheck docs # cpplint valgrind
+# A ordem aqui é importante: teste -> cobertura -> cppcheck -> cpplint -> docs -> valgrind -------ADICIONAR
+#full_check: test coverage cppcheck docs # cpplint valgrind
+full_check: test coverage cppcheck valgrind docs # cpplint
 	@echo "Todas as verificações (testes, cobertura, análise estática e documentação) foram concluídas."
 
 # Regra para limpar os arquivos gerados
