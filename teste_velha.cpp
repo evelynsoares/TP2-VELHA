@@ -49,8 +49,8 @@ TEST(VerificarJogoTest, DiferencaAbsoluta) {
 TEST(VerificarJogoTest, Empate1) {
     jogoVelha empate1 = {
         {2, 1, 2},
-        {1, 1, 1},
-        {2, 2, 1}
+        {2, 1, 1},
+        {1, 2, 1}
     };
     int resultado = verificar_jogo(empate1);
 
@@ -66,6 +66,17 @@ TEST(VerificarJogoTest, Empate2) {
     int resultado = verificar_jogo(empate2);
 
     ASSERT_EQ(resultado, 0);
+}
+
+TEST(VerificarJogoTest, XGanhaDiagonal) {
+    jogoVelha xganha1 = {
+        {1, 2, 0},
+        {2, 1, 0},
+        {0, 0, 1}
+    };
+    int resultado = verificar_jogo(xganha1);
+
+    ASSERT_EQ(resultado, 1);
 }
 
 int main(int argc, char **argv) {
