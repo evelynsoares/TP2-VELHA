@@ -134,6 +134,18 @@ TEST(VerificarJogoTest, XGanhaColuna1) {
     ASSERT_EQ(resultado, 1);
 }
 
+TEST(VerificarJogoTest, OGanhaLinha3) {
+    jogoVelha oganhaL3 = {
+        {1, 0, 1},
+        {0, 1, 1},
+        {2, 2, 2}
+    };
+    int resultado = verificar_jogo(oganhaL3);
+
+    ASSERT_EQ(resultado, 2);
+}
+
+
 
 
 int main(int argc, char **argv) {
