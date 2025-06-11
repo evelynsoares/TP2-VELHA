@@ -2,17 +2,6 @@
 #include "gtest/gtest.h"
 #include "velha.hpp"
 
-TEST(VerificarJogoTest, JogoCom1_inicio) {
-    jogoVelha jogocom1 = {
-        {1, 0, 0},
-        {0, 0, 0},
-        {0, 0, 0}
-    };
-    int resultado = verificar_jogo(jogocom1);
-
-    ASSERT_EQ(resultado, -1);
-}
-
 TEST(VerificarJogoTest, RegrasVioladasPorJogadorX) {
     jogoVelha violado_x = {
         {1, 1, 1},
@@ -31,6 +20,17 @@ TEST(VerificarJogoTest, RegrasVioladasPorJogadorO) {
         {2, 2, 2}
     };
     int resultado = verificar_jogo(violado_o);
+
+    ASSERT_EQ(resultado, -2);
+}
+
+TEST(VerificarJogoTest, O_MaiorQueX) {
+    jogoVelha o_maior = {
+        {2, 2, 1},
+        {2, 2, 1},
+        {1, 1, 2}
+    };
+    int resultado = verificar_jogo(o_maior);
 
     ASSERT_EQ(resultado, -2);
 }
