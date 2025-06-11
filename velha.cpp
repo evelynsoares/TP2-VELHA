@@ -61,7 +61,7 @@ int verificar_jogo(jogoVelha jogo){
     }
 
     if (o_ganha > 0) {
-        /// O só pode vencer se tiver jogado <= número de vezes que X ou 
+        /// O só pode vencer se tiver jogado <= número de vezes que X 
         if (count_o == count_x || count_o == count_x - 1) return 2;
         else return -2;
     }
