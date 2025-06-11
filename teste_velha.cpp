@@ -123,6 +123,17 @@ TEST(VerificarJogoTest, XGanhaLinha1) {
     ASSERT_EQ(resultado, 1);
 }
 
+TEST(VerificarJogoTest, XGanhaColuna1) {
+    jogoVelha xganhaC1 = {
+        {1, 1, 2},
+        {0, 1, 2},
+        {2, 1, 0}
+    };
+    int resultado = verificar_jogo(xganhaC1);
+
+    ASSERT_EQ(resultado, 1);
+}
+
 
 
 int main(int argc, char **argv) {
