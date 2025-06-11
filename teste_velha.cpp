@@ -35,6 +35,17 @@ TEST(VerificarJogoTest, O_MaiorQueX) {
     ASSERT_EQ(resultado, -2);
 }
 
+TEST(VerificarJogoTest, DiferencaAbsoluta) {
+    jogoVelha dif_abs = {
+        {2, 1, 2},
+        {0, 0, 0},
+        {2, 1, 2}
+    };
+    int resultado = verificar_jogo(dif_abs);
+
+    ASSERT_EQ(resultado, -2);
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv); // Inicializa o GTest
     return RUN_ALL_TESTS();                // Executa todos os testes

@@ -26,7 +26,7 @@ int verificar_jogo(jogoVelha jogo){
         //if (jogo[i][0] == 1) x_vertical++;
         //if (jogo[i][0] == 0) o_vertical++;
     }
-
+    //  ( " " ) (' ')
     /// A diferença entre o número de Xs e Os não pode ser maior que 1
     /// O não pode ter mais peças que X (X começa a partida)
     if (count_o > count_x || std::abs(count_x-count_o > 1)) return -2;
