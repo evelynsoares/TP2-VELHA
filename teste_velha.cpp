@@ -112,6 +112,19 @@ TEST(VerificarJogoTest, OGanhaDiagonal2) {
     ASSERT_EQ(resultado, 2);
 }
 
+TEST(VerificarJogoTest, XGanhaLinha1) {
+    jogoVelha xganhaL1 = {
+        {1, 1, 1},
+        {0, 2, 2},
+        {0, 0, 0}
+    };
+    int resultado = verificar_jogo(xganhaL1);
+
+    ASSERT_EQ(resultado, 1);
+}
+
+
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv); // Inicializa o GTest
     return RUN_ALL_TESTS();                // Executa todos os testes
