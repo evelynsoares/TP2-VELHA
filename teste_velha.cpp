@@ -145,6 +145,16 @@ TEST(VerificarJogoTest, OGanhaLinha3) {
     ASSERT_EQ(resultado, 2);
 }
 
+TEST(VerificarJogoTest, OGanhaColuna3) {
+    jogoVelha oganhaC3 = {
+        {1, 0, 2},
+        {0, 1, 2},
+        {1, 1, 2}
+    };
+    int resultado = verificar_jogo(oganhaC3);
+
+    ASSERT_EQ(resultado, 2);
+}
 
 
 
