@@ -1,0 +1,46 @@
+\doxysection{Referência ao ficheiro velha.\+hpp}
+\hypertarget{velha_8hpp}{}\label{velha_8hpp}\index{velha.hpp@{velha.hpp}}
+
+
+Declarações para o jogo da velha.  
+
+
+\doxysubsubsection*{Definições de tipos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{velha_8hpp_abacfd1d13bc6a69c57d3d78fb21fefe7}\label{velha_8hpp_abacfd1d13bc6a69c57d3d78fb21fefe7} 
+typedef int {\bfseries jogo\+Velha}\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{velha_8hpp_a06f7afe7582dc7d339f67c52db48cb03}{verificar\+\_\+jogo}} (jogo\+Velha jogo)
+\begin{DoxyCompactList}\small\item\em Verifica o estado atual do jogo da velha. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Declarações para o jogo da velha. 
+
+Este arquivo define o tipo de dados para o tabuleiro do jogo da velha e declara a função que verifica o estado atual do jogo, indicando se há um vencedor, empate, estado indefinido ou impossível. 
+
+\label{doc-func-members}
+\Hypertarget{velha_8hpp_doc-func-members}
+\doxysubsection{Documentação das funções}
+\Hypertarget{velha_8hpp_a06f7afe7582dc7d339f67c52db48cb03}\index{velha.hpp@{velha.hpp}!verificar\_jogo@{verificar\_jogo}}
+\index{verificar\_jogo@{verificar\_jogo}!velha.hpp@{velha.hpp}}
+\doxysubsubsection{\texorpdfstring{verificar\_jogo()}{verificar\_jogo()}}
+{\footnotesize\ttfamily \label{velha_8hpp_a06f7afe7582dc7d339f67c52db48cb03} 
+int verificar\+\_\+jogo (\begin{DoxyParamCaption}\item[{jogo\+Velha}]{jogo}{}\end{DoxyParamCaption})}
+
+
+
+Verifica o estado atual do jogo da velha. 
+
+Esta função analisa uma matriz 3x3 que representa o tabuleiro do jogo da velha e retorna um código indicando o vencedor, empate ou estado indefinido/impossível. 
+\begin{DoxyParams}{Parâmetros}
+{\em jogo} & Uma matriz 3x3 de inteiros representando o tabuleiro. 0\+: Posição vazia, 1\+: X, 2\+: O. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+int Um inteiro que indica o estado do jogo\+: 1\+: Vencedor X 2\+: Vencedor O 0\+: Jogo empatado -\/1\+: Jogo indefinido (jogo em andamento ou contagem de peças inválida) -\/2\+: Jogo impossível (regras violadas, ex\+: todas as posições X) 
+\end{DoxyReturn}
