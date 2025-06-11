@@ -178,6 +178,17 @@ TEST(VerificarJogoTest, EmAndamento2) {
     ASSERT_EQ(resultado, -1);
 }
 
+TEST(VerificarJogoTest, NaoComecou) {
+    jogoVelha andamento3 = {
+        {0, 0, 0},
+        {0, 0, 0},
+        {0, 0, 0}
+    };
+    int resultado = verificar_jogo(andamento3);
+
+    ASSERT_EQ(resultado, -1);
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv); // Inicializa o GTest
     return RUN_ALL_TESTS();                // Executa todos os testes
