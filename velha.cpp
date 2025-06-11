@@ -27,16 +27,20 @@ int verificar_jogo(jogoVelha jogo){
         //if (jogo[i][0] == 0) o_vertical++;
     }
     //  ( " " ) (' ')
-    /// A diferença entre o número de Xs e Os não pode ser maior que 1
-    /// O não pode ter mais peças que X (X começa a partida)
-    if (count_o > count_x || std::abs(count_x-count_o > 1)) return -2;
+
     /**
      * Estado em que todos os espaços estão vazios indica que não começou: retorna -1
      * Se um jogador inseriu O ou X em mais de 5 posições as regras foram violadas: retorna -2
     */
-
     if (count_vazio == 9) return -1;
     if (count_x > 5 || count_o > 5) return -2;
+
+    /// A diferença entre o número de Xs e Os não pode ser maior que 1
+    /// O não pode ter mais peças que X (X começa a partida)
+    if (count_o > count_x || std::abs(count_x-count_o > 1)) return -2;
+
+    /// Jogo empatado
+    if ((count_x + count_o) == 9) return 0;
     
     return -1;
 }

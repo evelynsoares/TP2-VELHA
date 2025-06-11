@@ -46,6 +46,28 @@ TEST(VerificarJogoTest, DiferencaAbsoluta) {
     ASSERT_EQ(resultado, -2);
 }
 
+TEST(VerificarJogoTest, Empate1) {
+    jogoVelha empate1 = {
+        {2, 1, 2},
+        {1, 1, 1},
+        {2, 2, 1}
+    };
+    int resultado = verificar_jogo(empate1);
+
+    ASSERT_EQ(resultado, 0);
+}
+
+TEST(VerificarJogoTest, Empate2) {
+    jogoVelha empate2 = {
+        {1, 2, 2},
+        {2, 1, 1},
+        {1, 1, 2}
+    };
+    int resultado = verificar_jogo(empate2);
+
+    ASSERT_EQ(resultado, 0);
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv); // Inicializa o GTest
     return RUN_ALL_TESTS();                // Executa todos os testes
