@@ -1349,8 +1349,7 @@ _ZN35TesteVerificarJogo_InvalidoEx2_Test8TestBodyEv:
         1:  432:}
 ------------------
         -:  433:
-        -:  434:
-        1:  435:int main(int argc, char **argv) {
-        1:  436:    ::testing::InitGoogleTest(&argc, argv); // Inicializa o GTest
-        1:  437:    return RUN_ALL_TESTS();                // Executa todos os testes
-        -:  438:}
+        1:  434:int main(int argc, char **argv) {
+        1:  435:    ::testing::InitGoogleTest(&argc, argv); // Inicializa o GTest
+        1:  436:    return RUN_ALL_TESTS();                // Executa todos os testes
+        -:  437:}
