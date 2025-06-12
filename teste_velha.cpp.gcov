@@ -826,8 +826,36 @@ _ZN54VerificarJogoTest_InvalidoDiferencaTurnoMaiorQue1_Test8TestBodyEv:
        1*:  269:    ASSERT_EQ(verificar_jogo(jogo), -2);
         -:  270:}
 ------------------
-        -:  271:
-        1:  272:int main(int argc, char **argv) {
-        1:  273:    ::testing::InitGoogleTest(&argc, argv); // Inicializa o GTest
-        1:  274:    return RUN_ALL_TESTS();                // Executa todos os testes
-        -:  275:}
+        4:  271:TEST(VerificarJogoTest, InvalidoXVenceuComContagemErrada) {
+        1:  272:    jogoVelha jogo = {
+        -:  273:        {1, 1, 1},
+        -:  274:        {2, 0, 0},
+        -:  275:        {0, 0, 0}
+        -:  276:    };
+       1*:  277:    ASSERT_EQ(verificar_jogo(jogo), -2);
+        -:  278:}
+------------------
+_ZN55VerificarJogoTest_InvalidoXVenceuComContagemErrada_TestC2Ev:
+        1:  271:TEST(VerificarJogoTest, InvalidoXVenceuComContagemErrada) {
+------------------
+_ZN55VerificarJogoTest_InvalidoXVenceuComContagemErrada_TestD0Ev:
+        1:  271:TEST(VerificarJogoTest, InvalidoXVenceuComContagemErrada) {
+------------------
+_ZN55VerificarJogoTest_InvalidoXVenceuComContagemErrada_TestD2Ev:
+        1:  271:TEST(VerificarJogoTest, InvalidoXVenceuComContagemErrada) {
+------------------
+_ZN55VerificarJogoTest_InvalidoXVenceuComContagemErrada_Test8TestBodyEv:
+        1:  271:TEST(VerificarJogoTest, InvalidoXVenceuComContagemErrada) {
+        1:  272:    jogoVelha jogo = {
+        -:  273:        {1, 1, 1},
+        -:  274:        {2, 0, 0},
+        -:  275:        {0, 0, 0}
+        -:  276:    };
+       1*:  277:    ASSERT_EQ(verificar_jogo(jogo), -2);
+        -:  278:}
+------------------
+        -:  279:
+        1:  280:int main(int argc, char **argv) {
+        1:  281:    ::testing::InitGoogleTest(&argc, argv); // Inicializa o GTest
+        1:  282:    return RUN_ALL_TESTS();                // Executa todos os testes
+        -:  283:}

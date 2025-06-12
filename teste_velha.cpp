@@ -268,6 +268,14 @@ TEST(VerificarJogoTest, InvalidoDiferencaTurnoMaiorQue1) {
     };
     ASSERT_EQ(verificar_jogo(jogo), -2);
 }
+TEST(VerificarJogoTest, InvalidoXVenceuComContagemErrada) {
+    jogoVelha jogo = {
+        {1, 1, 1},
+        {2, 0, 0},
+        {0, 0, 0}
+    };
+    ASSERT_EQ(verificar_jogo(jogo), -2);
+}
 
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv); // Inicializa o GTest

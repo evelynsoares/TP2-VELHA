@@ -1377,11 +1377,11 @@
         -: 1373:
         -: 1374:// The helper function for {ASSERT|EXPECT}_EQ.
         -: 1375:template <typename T1, typename T2>
-       26: 1376:AssertionResult CmpHelperEQ(const char* lhs_expression,
+       27: 1376:AssertionResult CmpHelperEQ(const char* lhs_expression,
         -: 1377:                            const char* rhs_expression, const T1& lhs,
         -: 1378:                            const T2& rhs) {
-       26: 1379:  if (lhs == rhs) {
-       26: 1380:    return AssertionSuccess();
+       27: 1379:  if (lhs == rhs) {
+       27: 1380:    return AssertionSuccess();
         -: 1381:  }
         -: 1382:
     #####: 1383:  return CmpHelperEQFailure(lhs_expression, rhs_expression, lhs, rhs);
@@ -1396,10 +1396,10 @@
         -: 1392:      // and the other is the null pointer constant.
         -: 1393:      typename std::enable_if<!std::is_integral<T1>::value ||
         -: 1394:                              !std::is_pointer<T2>::value>::type* = nullptr>
-       26: 1395:  static AssertionResult Compare(const char* lhs_expression,
+       27: 1395:  static AssertionResult Compare(const char* lhs_expression,
         -: 1396:                                 const char* rhs_expression, const T1& lhs,
         -: 1397:                                 const T2& rhs) {
-       26: 1398:    return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+       27: 1398:    return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
         -: 1399:  }
         -: 1400:
         -: 1401:  // With this overloaded version, we allow anonymous enums to be used
