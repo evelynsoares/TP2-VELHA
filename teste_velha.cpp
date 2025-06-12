@@ -277,6 +277,24 @@ TEST(VerificarJogoTest, InvalidoXVenceuComContagemErrada) {
     ASSERT_EQ(verificar_jogo(jogo), -2);
 }
 
+TEST(VerificarJogoTest, InvalidoOVenceuComContagemErrada) {
+    jogoVelha jogo = {
+        {2, 1, 1},
+        {1, 2, 1},
+        {1, 0, 2}
+    };
+    ASSERT_EQ(verificar_jogo(jogo), -2);
+}
+
+TEST(VerificarJogoTest, InvalidoXGanhouDuasVezes) {
+    jogoVelha jogo = {
+        {1, 1, 1},
+        {1, 2, 2},
+        {1, 0, 0}
+    };
+    ASSERT_EQ(verificar_jogo(jogo), -2);
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv); // Inicializa o GTest
     return RUN_ALL_TESTS();                // Executa todos os testes

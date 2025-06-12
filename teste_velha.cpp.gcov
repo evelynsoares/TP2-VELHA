@@ -855,7 +855,65 @@ _ZN55VerificarJogoTest_InvalidoXVenceuComContagemErrada_Test8TestBodyEv:
         -:  278:}
 ------------------
         -:  279:
-        1:  280:int main(int argc, char **argv) {
-        1:  281:    ::testing::InitGoogleTest(&argc, argv); // Inicializa o GTest
-        1:  282:    return RUN_ALL_TESTS();                // Executa todos os testes
-        -:  283:}
+        4:  280:TEST(VerificarJogoTest, InvalidoOVenceuComContagemErrada) {
+        1:  281:    jogoVelha jogo = {
+        -:  282:        {2, 1, 1},
+        -:  283:        {1, 2, 1},
+        -:  284:        {1, 0, 2}
+        -:  285:    };
+       1*:  286:    ASSERT_EQ(verificar_jogo(jogo), -2);
+        -:  287:}
+------------------
+_ZN55VerificarJogoTest_InvalidoOVenceuComContagemErrada_TestC2Ev:
+        1:  280:TEST(VerificarJogoTest, InvalidoOVenceuComContagemErrada) {
+------------------
+_ZN55VerificarJogoTest_InvalidoOVenceuComContagemErrada_TestD0Ev:
+        1:  280:TEST(VerificarJogoTest, InvalidoOVenceuComContagemErrada) {
+------------------
+_ZN55VerificarJogoTest_InvalidoOVenceuComContagemErrada_TestD2Ev:
+        1:  280:TEST(VerificarJogoTest, InvalidoOVenceuComContagemErrada) {
+------------------
+_ZN55VerificarJogoTest_InvalidoOVenceuComContagemErrada_Test8TestBodyEv:
+        1:  280:TEST(VerificarJogoTest, InvalidoOVenceuComContagemErrada) {
+        1:  281:    jogoVelha jogo = {
+        -:  282:        {2, 1, 1},
+        -:  283:        {1, 2, 1},
+        -:  284:        {1, 0, 2}
+        -:  285:    };
+       1*:  286:    ASSERT_EQ(verificar_jogo(jogo), -2);
+        -:  287:}
+------------------
+        -:  288:
+        4:  289:TEST(VerificarJogoTest, InvalidoXGanhouDuasVezes) {
+        1:  290:    jogoVelha jogo = {
+        -:  291:        {1, 1, 1},
+        -:  292:        {1, 2, 2},
+        -:  293:        {1, 0, 0}
+        -:  294:    };
+       1*:  295:    ASSERT_EQ(verificar_jogo(jogo), -2);
+        -:  296:}
+------------------
+_ZN47VerificarJogoTest_InvalidoXGanhouDuasVezes_TestC2Ev:
+        1:  289:TEST(VerificarJogoTest, InvalidoXGanhouDuasVezes) {
+------------------
+_ZN47VerificarJogoTest_InvalidoXGanhouDuasVezes_TestD0Ev:
+        1:  289:TEST(VerificarJogoTest, InvalidoXGanhouDuasVezes) {
+------------------
+_ZN47VerificarJogoTest_InvalidoXGanhouDuasVezes_TestD2Ev:
+        1:  289:TEST(VerificarJogoTest, InvalidoXGanhouDuasVezes) {
+------------------
+_ZN47VerificarJogoTest_InvalidoXGanhouDuasVezes_Test8TestBodyEv:
+        1:  289:TEST(VerificarJogoTest, InvalidoXGanhouDuasVezes) {
+        1:  290:    jogoVelha jogo = {
+        -:  291:        {1, 1, 1},
+        -:  292:        {1, 2, 2},
+        -:  293:        {1, 0, 0}
+        -:  294:    };
+       1*:  295:    ASSERT_EQ(verificar_jogo(jogo), -2);
+        -:  296:}
+------------------
+        -:  297:
+        1:  298:int main(int argc, char **argv) {
+        1:  299:    ::testing::InitGoogleTest(&argc, argv); // Inicializa o GTest
+        1:  300:    return RUN_ALL_TESTS();                // Executa todos os testes
+        -:  301:}

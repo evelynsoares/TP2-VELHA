@@ -15,7 +15,6 @@ int verificar_jogo(jogoVelha jogo){
             else if (jogo[i][j] == 2) count_o++;
         }
     }
-    //  ( " " ) (' ')
 
     /**
      * Se um jogador inseriu O ou X em mais de 5 posições as regras foram violadas: retorna -2

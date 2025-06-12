@@ -439,13 +439,13 @@
         -:  435:// of a Test object.
         -:  436:class TestFactoryBase {
         -:  437: public:
-      27*:  438:  virtual ~TestFactoryBase() = default;
+      29*:  438:  virtual ~TestFactoryBase() = default;
 ------------------
 _ZN7testing8internal15TestFactoryBaseD0Ev:
     #####:  438:  virtual ~TestFactoryBase() = default;
 ------------------
 _ZN7testing8internal15TestFactoryBaseD2Ev:
-       27:  438:  virtual ~TestFactoryBase() = default;
+       29:  438:  virtual ~TestFactoryBase() = default;
 ------------------
         -:  439:
         -:  440:  // Creates a test instance to run. The instance is both created and destroyed
@@ -453,7 +453,7 @@ _ZN7testing8internal15TestFactoryBaseD2Ev:
         -:  442:  virtual Test* CreateTest() = 0;
         -:  443:
         -:  444: protected:
-       27:  445:  TestFactoryBase() {}
+       29:  445:  TestFactoryBase() {}
         -:  446:
         -:  447: private:
         -:  448:  TestFactoryBase(const TestFactoryBase&) = delete;
@@ -465,9 +465,15 @@ _ZN7testing8internal15TestFactoryBaseD2Ev:
         -:  454:template <class TestClass>
         -:  455:class TestFactoryImpl : public TestFactoryBase {
         -:  456: public:
-       27:  457:  Test* CreateTest() override { return new TestClass; }
+       29:  457:  Test* CreateTest() override { return new TestClass; }
 ------------------
-_ZN7testing8internal15TestFactoryImplI36VerificarJogoTest_OGanhaColuna3_TestE10CreateTestEv:
+_ZN7testing8internal15TestFactoryImplI34VerificarJogoTest_EmAndamento_TestE10CreateTestEv:
+        1:  457:  Test* CreateTest() override { return new TestClass; }
+------------------
+_ZN7testing8internal15TestFactoryImplI47VerificarJogoTest_InvalidoXGanhouDuasVezes_TestE10CreateTestEv:
+        1:  457:  Test* CreateTest() override { return new TestClass; }
+------------------
+_ZN7testing8internal15TestFactoryImplI55VerificarJogoTest_InvalidoOVenceuComContagemErrada_TestE10CreateTestEv:
         1:  457:  Test* CreateTest() override { return new TestClass; }
 ------------------
 _ZN7testing8internal15TestFactoryImplI55VerificarJogoTest_InvalidoXVenceuComContagemErrada_TestE10CreateTestEv:
@@ -506,10 +512,10 @@ _ZN7testing8internal15TestFactoryImplI33VerificarJogoTest_NaoComecou_TestE10Crea
 _ZN7testing8internal15TestFactoryImplI35VerificarJogoTest_EmAndamento2_TestE10CreateTestEv:
         1:  457:  Test* CreateTest() override { return new TestClass; }
 ------------------
-_ZN7testing8internal15TestFactoryImplI34VerificarJogoTest_EmAndamento_TestE10CreateTestEv:
+_ZN7testing8internal15TestFactoryImplI48VerificarJogoTest_RegrasVioladasPorJogadorX_TestE10CreateTestEv:
         1:  457:  Test* CreateTest() override { return new TestClass; }
 ------------------
-_ZN7testing8internal15TestFactoryImplI48VerificarJogoTest_RegrasVioladasPorJogadorX_TestE10CreateTestEv:
+_ZN7testing8internal15TestFactoryImplI36VerificarJogoTest_OGanhaColuna3_TestE10CreateTestEv:
         1:  457:  Test* CreateTest() override { return new TestClass; }
 ------------------
 _ZN7testing8internal15TestFactoryImplI35VerificarJogoTest_OGanhaLinha3_TestE10CreateTestEv:
@@ -568,8 +574,8 @@ _ZN7testing8internal15TestFactoryImplI48VerificarJogoTest_RegrasVioladasPorJogad
         -:  475:using TearDownTestSuiteFunc = void (*)();
         -:  476:
         -:  477:struct CodeLocation {
-       27:  478:  CodeLocation(const std::string& a_file, int a_line)
-       27:  479:      : file(a_file), line(a_line) {}
+       29:  478:  CodeLocation(const std::string& a_file, int a_line)
+       29:  479:      : file(a_file), line(a_line) {}
         -:  480:
         -:  481:  std::string file;
         -:  482:  int line;
@@ -581,9 +587,9 @@ _ZN7testing8internal15TestFactoryImplI48VerificarJogoTest_RegrasVioladasPorJogad
         -:  488:// Utility functions to help SuiteApiResolver
         -:  489:using SetUpTearDownSuiteFuncType = void (*)();
         -:  490:
-      108:  491:inline SetUpTearDownSuiteFuncType GetNotDefaultOrNull(
+      116:  491:inline SetUpTearDownSuiteFuncType GetNotDefaultOrNull(
         -:  492:    SetUpTearDownSuiteFuncType a, SetUpTearDownSuiteFuncType def) {
-     108*:  493:  return a == def ? nullptr : a;
+     116*:  493:  return a == def ? nullptr : a;
         -:  494:}
         -:  495:
         -:  496:template <typename T>
@@ -596,20 +602,20 @@ _ZN7testing8internal15TestFactoryImplI48VerificarJogoTest_RegrasVioladasPorJogad
         -:  503:  using Test =
         -:  504:      typename std::conditional<sizeof(T) != 0, ::testing::Test, void>::type;
         -:  505:
-       27:  506:  static SetUpTearDownSuiteFuncType GetSetUpCaseOrSuite(const char* filename,
+       29:  506:  static SetUpTearDownSuiteFuncType GetSetUpCaseOrSuite(const char* filename,
         -:  507:                                                        int line_num) {
         -:  508:#ifndef GTEST_REMOVE_LEGACY_TEST_CASEAPI_
         -:  509:    SetUpTearDownSuiteFuncType test_case_fp =
-       27:  510:        GetNotDefaultOrNull(&T::SetUpTestCase, &Test::SetUpTestCase);
+       29:  510:        GetNotDefaultOrNull(&T::SetUpTestCase, &Test::SetUpTestCase);
         -:  511:    SetUpTearDownSuiteFuncType test_suite_fp =
-       27:  512:        GetNotDefaultOrNull(&T::SetUpTestSuite, &Test::SetUpTestSuite);
+       29:  512:        GetNotDefaultOrNull(&T::SetUpTestSuite, &Test::SetUpTestSuite);
         -:  513:
-      27*:  514:    GTEST_CHECK_(!test_case_fp || !test_suite_fp)
+      29*:  514:    GTEST_CHECK_(!test_case_fp || !test_suite_fp)
         -:  515:        << "Test can not provide both SetUpTestSuite and SetUpTestCase, please "
         -:  516:           "make sure there is only one present at "
     #####:  517:        << filename << ":" << line_num;
         -:  518:
-      27*:  519:    return test_case_fp != nullptr ? test_case_fp : test_suite_fp;
+      29*:  519:    return test_case_fp != nullptr ? test_case_fp : test_suite_fp;
         -:  520:#else
         -:  521:    (void)(filename);
         -:  522:    (void)(line_num);
@@ -617,20 +623,20 @@ _ZN7testing8internal15TestFactoryImplI48VerificarJogoTest_RegrasVioladasPorJogad
         -:  524:#endif
         -:  525:  }
         -:  526:
-       27:  527:  static SetUpTearDownSuiteFuncType GetTearDownCaseOrSuite(const char* filename,
+       29:  527:  static SetUpTearDownSuiteFuncType GetTearDownCaseOrSuite(const char* filename,
         -:  528:                                                           int line_num) {
         -:  529:#ifndef GTEST_REMOVE_LEGACY_TEST_CASEAPI_
         -:  530:    SetUpTearDownSuiteFuncType test_case_fp =
-       27:  531:        GetNotDefaultOrNull(&T::TearDownTestCase, &Test::TearDownTestCase);
+       29:  531:        GetNotDefaultOrNull(&T::TearDownTestCase, &Test::TearDownTestCase);
         -:  532:    SetUpTearDownSuiteFuncType test_suite_fp =
-       27:  533:        GetNotDefaultOrNull(&T::TearDownTestSuite, &Test::TearDownTestSuite);
+       29:  533:        GetNotDefaultOrNull(&T::TearDownTestSuite, &Test::TearDownTestSuite);
         -:  534:
-      27*:  535:    GTEST_CHECK_(!test_case_fp || !test_suite_fp)
+      29*:  535:    GTEST_CHECK_(!test_case_fp || !test_suite_fp)
         -:  536:        << "Test can not provide both TearDownTestSuite and TearDownTestCase,"
         -:  537:           " please make sure there is only one present at"
     #####:  538:        << filename << ":" << line_num;
         -:  539:
-      27*:  540:    return test_case_fp != nullptr ? test_case_fp : test_suite_fp;
+      29*:  540:    return test_case_fp != nullptr ? test_case_fp : test_suite_fp;
         -:  541:#else
         -:  542:    (void)(filename);
         -:  543:    (void)(line_num);
