@@ -105,7 +105,7 @@
         -:  101:#endif
         -:  102:
         -:  103:#if __cplusplus <= 201703L
-       20:  104:      ~__new_allocator() _GLIBCXX_USE_NOEXCEPT { }
+       21:  104:      ~__new_allocator() _GLIBCXX_USE_NOEXCEPT { }
         -:  105:
         -:  106:      pointer
         -:  107:      address(reference __x) const _GLIBCXX_NOEXCEPT

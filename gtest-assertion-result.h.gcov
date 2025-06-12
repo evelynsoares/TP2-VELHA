@@ -175,7 +175,7 @@
         -:  171:  }
         -:  172:
         -:  173:  // Returns true if and only if the assertion succeeded.
-       20:  174:  operator bool() const { return success_; }  // NOLINT
+       21:  174:  operator bool() const { return success_; }  // NOLINT
         -:  175:
         -:  176:  // Returns the assertion's negation. Used with EXPECT/ASSERT_FALSE.
         -:  177:  AssertionResult operator!() const;
