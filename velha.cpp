@@ -1,3 +1,33 @@
+/**
+ * @brief Verifica o estado atual de uma partida de Jogo da Velha.
+ *
+ * A função analisa um tabuleiro 3x3 e determina se a partida está:
+ * - Em andamento
+ * - Ganha pelo jogador X
+ * - Ganha pelo jogador O
+ * - Empatada
+ * - Inválida, segundo as regras do jogo
+ *
+ * As regras consideradas incluem:
+ * - X sempre começa a partida
+ * - Um jogador não pode ter mais de 5 jogadas
+ * - O número de jogadas de X deve ser igual ou exatamente 1 a mais que O
+ * - Não é possível que ambos jogadores ganhem simultaneamente
+ * - X só vence se jogou uma vez a mais que O
+ * - O só vence se jogou o mesmo número ou uma a menos que X
+ *
+ * @param jogo Matriz 3x3 representando o tabuleiro:
+ *        - 0: célula vazia
+ *        - 1: jogada do jogador X
+ *        - 2: jogada do jogador O
+ *
+ * @return int Código representando o estado da partida:
+ *         -  1: Vitória do jogador X
+ *         -  2: Vitória do jogador O
+ *         -  0: Empate
+ *         - -1: Jogo em andamento
+ *         - -2: Estado inválido (regras violadas)
+ */
 #include "velha.hpp"
 #include <cmath>
 

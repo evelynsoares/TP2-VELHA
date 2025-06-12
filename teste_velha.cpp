@@ -1,4 +1,43 @@
-//testes com gtest
+/*
+ * Arquivo: teste_velha.cpp
+ * -------------------------
+ * Este arquivo contém uma bateria de testes unitários escritos com o framework
+ * Google Test (GTest) para validar a função `verificar_jogo`, responsável por 
+ * analisar o estado de um tabuleiro de jogo da velha representado 
+ * por uma matriz 3x3 e retornar um valor inteiro que representa:
+ *
+ *   - 1  -> Vitória do jogador X
+ *   - 2  -> Vitória do jogador O
+ *   - 0  -> Empate (jogo completo sem vencedor)
+ *   - -1 -> Jogo ainda em andamento ou não iniciado
+ *   - -2 -> Estado inválido do jogo (regras violadas)
+ *
+ * A função é testada contra dezenas de cenários, incluindo:
+ *   - Vitórias válidas de X e O em todas as direções (linhas, colunas, diagonais)
+ *   - Situações de empate
+ *   - Jogos ainda em andamento (com jogadas faltando)
+ *   - Situações inválidas, como:
+ *       - Jogadores com número incorreto de jogadas
+ *       - Ambos os jogadores vencendo ao mesmo tempo
+ *       - Jogadas simultâneas ou em excesso
+ *       - Diferença de jogadas maior que 1 entre os jogadores
+ *       - Vencedor com contagem de jogadas incoerente
+ *
+ * Estes testes garantem que a lógica implementada na função `verificar_jogo`
+ * esteja correta e robusta para qualquer entrada possível de estado do jogo.
+ *
+ * Para compilar os testes, é necessário:
+ *   - Ter o Google Test instalado e configurado no projeto.
+ *   - Incluir este arquivo em um executável de teste.
+ *   - Comando para o Makefile: make full_check 
+ *
+ * Exemplo de compilação com g++:
+ *   g++ -std=c++17 -I<gtest_path>/include -L<gtest_path>/lib \
+ *       teste_velha.cpp -lgtest -lgtest_main -pthread -o test_velha
+ *
+ * Autora: Evelyn Soares Pereira
+ * Data: 11/06/25
+ */
 #include "gtest/gtest.h"
 #include "velha.hpp"
 
