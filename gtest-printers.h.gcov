@@ -1,7 +1,7 @@
         -:    0:Source:/usr/include/gtest/gtest-printers.h
         -:    0:Graph:teste_velha.gcno
         -:    0:Data:teste_velha.gcda
-        -:    0:Runs:1
+        -:    0:Runs:3
         -:    1:// Copyright 2007, Google Inc.
         -:    2:// All rights reserved.
         -:    3://
@@ -222,12 +222,12 @@
         -:  218:  // ADL (possibly involving implicit conversions).
         -:  219:  // (Use SFINAE via return type, because it seems GCC < 12 doesn't handle name
         -:  220:  // lookup properly when we do it in the template parameter list.)
-    #####:  221:  static auto PrintValue(const T& value, ::std::ostream* os)
+        2:  221:  static auto PrintValue(const T& value, ::std::ostream* os)
         -:  222:      -> decltype((void)(*os << value)) {
         -:  223:    // Call streaming operator found by ADL, possibly with implicit conversions
         -:  224:    // of the arguments.
-    #####:  225:    *os << value;
-    #####:  226:  }
+        2:  225:    *os << value;
+        2:  226:  }
         -:  227:};
         -:  228:
         -:  229:}  // namespace internal_stream_operator_without_lexical_name_lookup
@@ -327,7 +327,7 @@
         -:  323://  - Print types convertible to StringView, if available.
         -:  324://  - Fallback to printing the raw bytes of the object.
         -:  325:template <typename T>
-    #####:  326:void PrintWithFallback(const T& value, ::std::ostream* os) {
+        2:  326:void PrintWithFallback(const T& value, ::std::ostream* os) {
         -:  327:  using Printer = typename FindFirstPrinter<
         -:  328:      T, void, ContainerPrinter, FunctionPointerPrinter, PointerPrinter,
         -:  329:      ProtobufPrinter,
@@ -337,8 +337,8 @@
         -:  333:      internal_stream_operator_without_lexical_name_lookup::StreamPrinter,
         -:  334:      ConvertibleToIntegerPrinter, ConvertibleToStringViewPrinter,
         -:  335:      RawBytesPrinter, FallbackPrinter>::type;
-    #####:  336:  Printer::PrintValue(value, os);
-    #####:  337:}
+        2:  336:  Printer::PrintValue(value, os);
+        2:  337:}
         -:  338:
         -:  339:// FormatForComparison<ToPrint, OtherOperand>::Format(value) formats a
         -:  340:// value of type ToPrint that is an operand of a comparison assertion
@@ -358,8 +358,8 @@
         -:  354:template <typename ToPrint, typename OtherOperand>
         -:  355:class FormatForComparison {
         -:  356: public:
-    #####:  357:  static ::std::string Format(const ToPrint& value) {
-    #####:  358:    return ::testing::PrintToString(value);
+        2:  357:  static ::std::string Format(const ToPrint& value) {
+        2:  358:    return ::testing::PrintToString(value);
         -:  359:  }
         -:  360:};
         -:  361:
@@ -438,9 +438,9 @@
         -:  434://
         -:  435:// INTERNAL IMPLEMENTATION - DO NOT USE IN A USER PROGRAM.
         -:  436:template <typename T1, typename T2>
-    #####:  437:std::string FormatForComparisonFailureMessage(const T1& value,
+        2:  437:std::string FormatForComparisonFailureMessage(const T1& value,
         -:  438:                                              const T2& /* other_operand */) {
-    #####:  439:  return FormatForComparison<T1, T2>::Format(value);
+        2:  439:  return FormatForComparison<T1, T2>::Format(value);
         -:  440:}
         -:  441:
         -:  442:// UniversalPrinter<T>::Print(value, ostream_ptr) prints the given
@@ -465,9 +465,9 @@
         -:  461:// or there is already a << operator but it doesn't do what the user
         -:  462:// wants).
         -:  463:template <typename T>
-    #####:  464:void PrintTo(const T& value, ::std::ostream* os) {
-    #####:  465:  internal::PrintWithFallback(value, os);
-    #####:  466:}
+        2:  464:void PrintTo(const T& value, ::std::ostream* os) {
+        2:  465:  internal::PrintWithFallback(value, os);
+        2:  466:}
         -:  467:
         -:  468:// The following list of PrintTo() overloads tells
         -:  469:// UniversalPrinter<T>::Print() how to print standard types (built-in
@@ -800,7 +800,7 @@
         -:  796:  // Note: we deliberately don't call this PrintTo(), as that name
         -:  797:  // conflicts with ::testing::internal::PrintTo in the body of the
         -:  798:  // function.
-    #####:  799:  static void Print(const T& value, ::std::ostream* os) {
+        2:  799:  static void Print(const T& value, ::std::ostream* os) {
         -:  800:    // By default, ::testing::internal::PrintTo() is used for printing
         -:  801:    // the value.
         -:  802:    //
@@ -809,8 +809,8 @@
         -:  805:    // be visible here.  Since it is more specific than the generic ones
         -:  806:    // in ::testing::internal, it will be picked by the compiler in the
         -:  807:    // following statement - exactly what we want.
-    #####:  808:    PrintTo(value, os);
-    #####:  809:  }
+        2:  808:    PrintTo(value, os);
+        2:  809:  }
         -:  810:
         -:  811:  GTEST_DISABLE_MSC_WARNINGS_POP_()
         -:  812:};
@@ -990,9 +990,9 @@
         -:  986:template <typename T>
         -:  987:class UniversalTersePrinter {
         -:  988: public:
-    #####:  989:  static void Print(const T& value, ::std::ostream* os) {
-    #####:  990:    UniversalPrint(value, os);
-    #####:  991:  }
+        2:  989:  static void Print(const T& value, ::std::ostream* os) {
+        2:  990:    UniversalPrint(value, os);
+        2:  991:  }
         -:  992:};
         -:  993:template <typename T>
         -:  994:class UniversalTersePrinter<T&> {
@@ -1109,12 +1109,12 @@
         -: 1105:// (const) char pointer, this prints both the pointer and the
         -: 1106:// NUL-terminated string.
         -: 1107:template <typename T>
-    #####: 1108:void UniversalPrint(const T& value, ::std::ostream* os) {
+        2: 1108:void UniversalPrint(const T& value, ::std::ostream* os) {
         -: 1109:  // A workarond for the bug in VC++ 7.1 that prevents us from instantiating
         -: 1110:  // UniversalPrinter with T directly.
         -: 1111:  typedef T T1;
-    #####: 1112:  UniversalPrinter<T1>::Print(value, os);
-    #####: 1113:}
+        2: 1112:  UniversalPrinter<T1>::Print(value, os);
+        2: 1113:}
         -: 1114:
         -: 1115:typedef ::std::vector<::std::string> Strings;
         -: 1116:
@@ -1149,11 +1149,11 @@
         -: 1145:}  // namespace internal
         -: 1146:
         -: 1147:template <typename T>
-    #####: 1148:::std::string PrintToString(const T& value) {
-    #####: 1149:  ::std::stringstream ss;
-    #####: 1150:  internal::UniversalTersePrinter<T>::Print(value, &ss);
-    #####: 1151:  return ss.str();
-    #####: 1152:}
+        2: 1148:::std::string PrintToString(const T& value) {
+        2: 1149:  ::std::stringstream ss;
+        2: 1150:  internal::UniversalTersePrinter<T>::Print(value, &ss);
+        4: 1151:  return ss.str();
+        2: 1152:}
         -: 1153:
         -: 1154:}  // namespace testing
         -: 1155:

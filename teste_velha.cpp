@@ -295,6 +295,60 @@ TEST(VerificarJogoTest, InvalidoXGanhouDuasVezes) {
     ASSERT_EQ(verificar_jogo(jogo), -2);
 }
 
+TEST(VerificarJogoTest, InvalidoOGanhouDuasVezes) {
+    jogoVelha jogo = {
+        {2, 2, 2},
+        {2, 1, 1},
+        {2, 0, 0}
+    };
+    ASSERT_EQ(verificar_jogo(jogo), -2);
+}
+
+TEST(VerificarJogoTest, XVenceCom5JogadasXEOCom4) {
+    jogoVelha jogo = {
+        {1, 1, 1},
+        {2, 2, 0},
+        {0, 0, 0}
+    };
+    ASSERT_EQ(verificar_jogo(jogo), 1);
+}
+
+TEST(VerificarJogoTest, OVenceComContagemInValida) {
+    jogoVelha jogo = {
+        {2, 2, 2},
+        {1, 1, 0},
+        {0, 0, 0}
+    };
+    ASSERT_EQ(verificar_jogo(jogo), -2);
+}
+
+TEST(VerificarJogoTest, OVenceComContagemValida) {
+    jogoVelha jogo = {
+        {2, 2, 2},
+        {1, 1, 0},
+        {1, 1, 0}
+    };
+    ASSERT_EQ(verificar_jogo(jogo), 2);
+}
+
+TEST(VerificarJogoTest, XGanhaDiagonalSecundaria) {
+    jogoVelha jogo = {
+        {2, 0, 1},
+        {0, 1, 2},
+        {1, 0, 0}
+    };
+    ASSERT_EQ(verificar_jogo(jogo), 1);
+}
+
+TEST(VerificarJogoTest, EmpateAlternado) {
+    jogoVelha jogo = {
+        {1, 2, 2},
+        {2, 1, 1},
+        {1, 1, 2}
+    };
+    ASSERT_EQ(verificar_jogo(jogo), 0);
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv); // Inicializa o GTest
     return RUN_ALL_TESTS();                // Executa todos os testes

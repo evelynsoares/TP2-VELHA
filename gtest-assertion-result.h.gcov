@@ -1,7 +1,7 @@
         -:    0:Source:/usr/include/gtest/gtest-assertion-result.h
         -:    0:Graph:teste_velha.gcno
         -:    0:Data:teste_velha.gcda
-        -:    0:Runs:1
+        -:    0:Runs:3
         -:    1:// Copyright 2005, Google Inc.
         -:    2:// All rights reserved.
         -:    3://
@@ -175,7 +175,7 @@
         -:  171:  }
         -:  172:
         -:  173:  // Returns true if and only if the assertion succeeded.
-       29:  174:  operator bool() const { return success_; }  // NOLINT
+      105:  174:  operator bool() const { return success_; }  // NOLINT
         -:  175:
         -:  176:  // Returns the assertion's negation. Used with EXPECT/ASSERT_FALSE.
         -:  177:  AssertionResult operator!() const;
@@ -184,11 +184,11 @@
         -:  180:  // use it when they fail (i.e., the predicate's outcome doesn't match the
         -:  181:  // assertion's expectation). When nothing has been streamed into the
         -:  182:  // object, returns an empty string.
-    #####:  183:  const char* message() const {
-    #####:  184:    return message_ != nullptr ? message_->c_str() : "";
+        1:  183:  const char* message() const {
+       1*:  184:    return message_ != nullptr ? message_->c_str() : "";
         -:  185:  }
         -:  186:  // Deprecated; please use message() instead.
-    #####:  187:  const char* failure_message() const { return message(); }
+        1:  187:  const char* failure_message() const { return message(); }
         -:  188:
         -:  189:  // Streams a custom failure message into this object.
         -:  190:  template <typename T>
