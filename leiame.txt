@@ -1,0 +1,4 @@
+O código deve ser executado com o googletest, gcov, cppcheck, valgrind, doxygen já instalados
+
+O comando no Makefile para fazer executar todas as especificações é: 
+make full_check
