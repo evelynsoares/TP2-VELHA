@@ -207,6 +207,15 @@ TEST(VerificarJogoTest, Invalido1) {
     ASSERT_EQ(verificar_jogo(jogo), -2);
 }
 
+TEST(VerificarJogoTest, Invalido2) {
+    jogoVelha jogo = {
+        {2, 1, 0},
+        {2, 1, 0},
+        {2, 1, 0}
+    };
+    ASSERT_EQ(verificar_jogo(jogo), -2);
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv); // Inicializa o GTest
     return RUN_ALL_TESTS();                // Executa todos os testes
