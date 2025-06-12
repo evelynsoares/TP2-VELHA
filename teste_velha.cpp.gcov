@@ -1,0 +1,631 @@
+        -:    0:Source:teste_velha.cpp
+        -:    0:Graph:teste_velha.gcno
+        -:    0:Data:teste_velha.gcda
+        -:    0:Runs:1
+        -:    1://testes com gtest
+        -:    2:#include "gtest/gtest.h"
+        -:    3:#include "velha.hpp"
+        -:    4:
+        4:    5:TEST(VerificarJogoTest, RegrasVioladasPorJogadorX) {
+        1:    6:    jogoVelha violado_x = {
+        -:    7:        {1, 1, 1},
+        -:    8:        {1, 1, 1},
+        -:    9:        {1, 1, 1}
+        -:   10:    };
+        1:   11:    int resultado = verificar_jogo(violado_x);
+        -:   12:
+       1*:   13:    ASSERT_EQ(resultado, -2);
+        -:   14:}
+------------------
+_ZN48VerificarJogoTest_RegrasVioladasPorJogadorX_TestC2Ev:
+        1:    5:TEST(VerificarJogoTest, RegrasVioladasPorJogadorX) {
+------------------
+_ZN48VerificarJogoTest_RegrasVioladasPorJogadorX_TestD0Ev:
+        1:    5:TEST(VerificarJogoTest, RegrasVioladasPorJogadorX) {
+------------------
+_ZN48VerificarJogoTest_RegrasVioladasPorJogadorX_TestD2Ev:
+        1:    5:TEST(VerificarJogoTest, RegrasVioladasPorJogadorX) {
+------------------
+_ZN48VerificarJogoTest_RegrasVioladasPorJogadorX_Test8TestBodyEv:
+        1:    5:TEST(VerificarJogoTest, RegrasVioladasPorJogadorX) {
+        1:    6:    jogoVelha violado_x = {
+        -:    7:        {1, 1, 1},
+        -:    8:        {1, 1, 1},
+        -:    9:        {1, 1, 1}
+        -:   10:    };
+        1:   11:    int resultado = verificar_jogo(violado_x);
+        -:   12:
+       1*:   13:    ASSERT_EQ(resultado, -2);
+        -:   14:}
+------------------
+        -:   15:
+        4:   16:TEST(VerificarJogoTest, RegrasVioladasPorJogadorO) {
+        1:   17:    jogoVelha violado_o = {
+        -:   18:        {2, 2, 2},
+        -:   19:        {2, 2, 2},
+        -:   20:        {2, 2, 2}
+        -:   21:    };
+        1:   22:    int resultado = verificar_jogo(violado_o);
+        -:   23:
+       1*:   24:    ASSERT_EQ(resultado, -2);
+        -:   25:}
+------------------
+_ZN48VerificarJogoTest_RegrasVioladasPorJogadorO_TestC2Ev:
+        1:   16:TEST(VerificarJogoTest, RegrasVioladasPorJogadorO) {
+------------------
+_ZN48VerificarJogoTest_RegrasVioladasPorJogadorO_TestD0Ev:
+        1:   16:TEST(VerificarJogoTest, RegrasVioladasPorJogadorO) {
+------------------
+_ZN48VerificarJogoTest_RegrasVioladasPorJogadorO_TestD2Ev:
+        1:   16:TEST(VerificarJogoTest, RegrasVioladasPorJogadorO) {
+------------------
+_ZN48VerificarJogoTest_RegrasVioladasPorJogadorO_Test8TestBodyEv:
+        1:   16:TEST(VerificarJogoTest, RegrasVioladasPorJogadorO) {
+        1:   17:    jogoVelha violado_o = {
+        -:   18:        {2, 2, 2},
+        -:   19:        {2, 2, 2},
+        -:   20:        {2, 2, 2}
+        -:   21:    };
+        1:   22:    int resultado = verificar_jogo(violado_o);
+        -:   23:
+       1*:   24:    ASSERT_EQ(resultado, -2);
+        -:   25:}
+------------------
+        -:   26:
+        4:   27:TEST(VerificarJogoTest, O_MaiorQueX) {
+        1:   28:    jogoVelha o_maior = {
+        -:   29:        {2, 2, 1},
+        -:   30:        {2, 2, 1},
+        -:   31:        {1, 1, 2}
+        -:   32:    };
+        1:   33:    int resultado = verificar_jogo(o_maior);
+        -:   34:
+       1*:   35:    ASSERT_EQ(resultado, -2);
+        -:   36:}
+------------------
+_ZN34VerificarJogoTest_O_MaiorQueX_TestC2Ev:
+        1:   27:TEST(VerificarJogoTest, O_MaiorQueX) {
+------------------
+_ZN34VerificarJogoTest_O_MaiorQueX_TestD0Ev:
+        1:   27:TEST(VerificarJogoTest, O_MaiorQueX) {
+------------------
+_ZN34VerificarJogoTest_O_MaiorQueX_TestD2Ev:
+        1:   27:TEST(VerificarJogoTest, O_MaiorQueX) {
+------------------
+_ZN34VerificarJogoTest_O_MaiorQueX_Test8TestBodyEv:
+        1:   27:TEST(VerificarJogoTest, O_MaiorQueX) {
+        1:   28:    jogoVelha o_maior = {
+        -:   29:        {2, 2, 1},
+        -:   30:        {2, 2, 1},
+        -:   31:        {1, 1, 2}
+        -:   32:    };
+        1:   33:    int resultado = verificar_jogo(o_maior);
+        -:   34:
+       1*:   35:    ASSERT_EQ(resultado, -2);
+        -:   36:}
+------------------
+        -:   37:
+        4:   38:TEST(VerificarJogoTest, DiferencaAbsoluta) {
+        1:   39:    jogoVelha dif_abs = {
+        -:   40:        {2, 1, 2},
+        -:   41:        {0, 0, 0},
+        -:   42:        {2, 1, 2}
+        -:   43:    };
+        1:   44:    int resultado = verificar_jogo(dif_abs);
+        -:   45:
+       1*:   46:    ASSERT_EQ(resultado, -2);
+        -:   47:}
+------------------
+_ZN40VerificarJogoTest_DiferencaAbsoluta_TestC2Ev:
+        1:   38:TEST(VerificarJogoTest, DiferencaAbsoluta) {
+------------------
+_ZN40VerificarJogoTest_DiferencaAbsoluta_TestD0Ev:
+        1:   38:TEST(VerificarJogoTest, DiferencaAbsoluta) {
+------------------
+_ZN40VerificarJogoTest_DiferencaAbsoluta_TestD2Ev:
+        1:   38:TEST(VerificarJogoTest, DiferencaAbsoluta) {
+------------------
+_ZN40VerificarJogoTest_DiferencaAbsoluta_Test8TestBodyEv:
+        1:   38:TEST(VerificarJogoTest, DiferencaAbsoluta) {
+        1:   39:    jogoVelha dif_abs = {
+        -:   40:        {2, 1, 2},
+        -:   41:        {0, 0, 0},
+        -:   42:        {2, 1, 2}
+        -:   43:    };
+        1:   44:    int resultado = verificar_jogo(dif_abs);
+        -:   45:
+       1*:   46:    ASSERT_EQ(resultado, -2);
+        -:   47:}
+------------------
+        -:   48:
+        4:   49:TEST(VerificarJogoTest, Empate1) {
+        1:   50:    jogoVelha empate1 = {
+        -:   51:        {2, 1, 2},
+        -:   52:        {2, 1, 1},
+        -:   53:        {1, 2, 1}
+        -:   54:    };
+        1:   55:    int resultado = verificar_jogo(empate1);
+        -:   56:
+       1*:   57:    ASSERT_EQ(resultado, 0);
+        -:   58:}
+------------------
+_ZN30VerificarJogoTest_Empate1_TestC2Ev:
+        1:   49:TEST(VerificarJogoTest, Empate1) {
+------------------
+_ZN30VerificarJogoTest_Empate1_TestD0Ev:
+        1:   49:TEST(VerificarJogoTest, Empate1) {
+------------------
+_ZN30VerificarJogoTest_Empate1_TestD2Ev:
+        1:   49:TEST(VerificarJogoTest, Empate1) {
+------------------
+_ZN30VerificarJogoTest_Empate1_Test8TestBodyEv:
+        1:   49:TEST(VerificarJogoTest, Empate1) {
+        1:   50:    jogoVelha empate1 = {
+        -:   51:        {2, 1, 2},
+        -:   52:        {2, 1, 1},
+        -:   53:        {1, 2, 1}
+        -:   54:    };
+        1:   55:    int resultado = verificar_jogo(empate1);
+        -:   56:
+       1*:   57:    ASSERT_EQ(resultado, 0);
+        -:   58:}
+------------------
+        -:   59:
+        4:   60:TEST(VerificarJogoTest, Empate2) {
+        1:   61:    jogoVelha empate2 = {
+        -:   62:        {1, 2, 2},
+        -:   63:        {2, 1, 1},
+        -:   64:        {1, 1, 2}
+        -:   65:    };
+        1:   66:    int resultado = verificar_jogo(empate2);
+        -:   67:
+       1*:   68:    ASSERT_EQ(resultado, 0);
+        -:   69:}
+------------------
+_ZN30VerificarJogoTest_Empate2_TestC2Ev:
+        1:   60:TEST(VerificarJogoTest, Empate2) {
+------------------
+_ZN30VerificarJogoTest_Empate2_TestD0Ev:
+        1:   60:TEST(VerificarJogoTest, Empate2) {
+------------------
+_ZN30VerificarJogoTest_Empate2_TestD2Ev:
+        1:   60:TEST(VerificarJogoTest, Empate2) {
+------------------
+_ZN30VerificarJogoTest_Empate2_Test8TestBodyEv:
+        1:   60:TEST(VerificarJogoTest, Empate2) {
+        1:   61:    jogoVelha empate2 = {
+        -:   62:        {1, 2, 2},
+        -:   63:        {2, 1, 1},
+        -:   64:        {1, 1, 2}
+        -:   65:    };
+        1:   66:    int resultado = verificar_jogo(empate2);
+        -:   67:
+       1*:   68:    ASSERT_EQ(resultado, 0);
+        -:   69:}
+------------------
+        -:   70:
+        4:   71:TEST(VerificarJogoTest, XGanhaDiagonal) {
+        1:   72:    jogoVelha xganha1 = {
+        -:   73:        {1, 2, 0},
+        -:   74:        {2, 1, 0},
+        -:   75:        {0, 0, 1}
+        -:   76:    };
+        1:   77:    int resultado = verificar_jogo(xganha1);
+        -:   78:
+       1*:   79:    ASSERT_EQ(resultado, 1);
+        -:   80:}
+------------------
+_ZN37VerificarJogoTest_XGanhaDiagonal_TestC2Ev:
+        1:   71:TEST(VerificarJogoTest, XGanhaDiagonal) {
+------------------
+_ZN37VerificarJogoTest_XGanhaDiagonal_TestD0Ev:
+        1:   71:TEST(VerificarJogoTest, XGanhaDiagonal) {
+------------------
+_ZN37VerificarJogoTest_XGanhaDiagonal_TestD2Ev:
+        1:   71:TEST(VerificarJogoTest, XGanhaDiagonal) {
+------------------
+_ZN37VerificarJogoTest_XGanhaDiagonal_Test8TestBodyEv:
+        1:   71:TEST(VerificarJogoTest, XGanhaDiagonal) {
+        1:   72:    jogoVelha xganha1 = {
+        -:   73:        {1, 2, 0},
+        -:   74:        {2, 1, 0},
+        -:   75:        {0, 0, 1}
+        -:   76:    };
+        1:   77:    int resultado = verificar_jogo(xganha1);
+        -:   78:
+       1*:   79:    ASSERT_EQ(resultado, 1);
+        -:   80:}
+------------------
+        -:   81:
+        4:   82:TEST(VerificarJogoTest, XGanhaDiagonal2) {
+        1:   83:    jogoVelha xganha2 = {
+        -:   84:        {2, 2, 1},
+        -:   85:        {2, 1, 0},
+        -:   86:        {1, 0, 1}
+        -:   87:    };
+        1:   88:    int resultado = verificar_jogo(xganha2);
+        -:   89:
+       1*:   90:    ASSERT_EQ(resultado, 1);
+        -:   91:}
+------------------
+_ZN38VerificarJogoTest_XGanhaDiagonal2_TestC2Ev:
+        1:   82:TEST(VerificarJogoTest, XGanhaDiagonal2) {
+------------------
+_ZN38VerificarJogoTest_XGanhaDiagonal2_TestD0Ev:
+        1:   82:TEST(VerificarJogoTest, XGanhaDiagonal2) {
+------------------
+_ZN38VerificarJogoTest_XGanhaDiagonal2_TestD2Ev:
+        1:   82:TEST(VerificarJogoTest, XGanhaDiagonal2) {
+------------------
+_ZN38VerificarJogoTest_XGanhaDiagonal2_Test8TestBodyEv:
+        1:   82:TEST(VerificarJogoTest, XGanhaDiagonal2) {
+        1:   83:    jogoVelha xganha2 = {
+        -:   84:        {2, 2, 1},
+        -:   85:        {2, 1, 0},
+        -:   86:        {1, 0, 1}
+        -:   87:    };
+        1:   88:    int resultado = verificar_jogo(xganha2);
+        -:   89:
+       1*:   90:    ASSERT_EQ(resultado, 1);
+        -:   91:}
+------------------
+        -:   92:
+        4:   93:TEST(VerificarJogoTest, OGanhaDiagonal) {
+        1:   94:    jogoVelha oganha1 = {
+        -:   95:        {2, 1, 1},
+        -:   96:        {1, 2, 1},
+        -:   97:        {0, 0, 2}
+        -:   98:    };
+        1:   99:    int resultado = verificar_jogo(oganha1);
+        -:  100:
+       1*:  101:    ASSERT_EQ(resultado, 2);
+        -:  102:}
+------------------
+_ZN37VerificarJogoTest_OGanhaDiagonal_TestC2Ev:
+        1:   93:TEST(VerificarJogoTest, OGanhaDiagonal) {
+------------------
+_ZN37VerificarJogoTest_OGanhaDiagonal_TestD0Ev:
+        1:   93:TEST(VerificarJogoTest, OGanhaDiagonal) {
+------------------
+_ZN37VerificarJogoTest_OGanhaDiagonal_TestD2Ev:
+        1:   93:TEST(VerificarJogoTest, OGanhaDiagonal) {
+------------------
+_ZN37VerificarJogoTest_OGanhaDiagonal_Test8TestBodyEv:
+        1:   93:TEST(VerificarJogoTest, OGanhaDiagonal) {
+        1:   94:    jogoVelha oganha1 = {
+        -:   95:        {2, 1, 1},
+        -:   96:        {1, 2, 1},
+        -:   97:        {0, 0, 2}
+        -:   98:    };
+        1:   99:    int resultado = verificar_jogo(oganha1);
+        -:  100:
+       1*:  101:    ASSERT_EQ(resultado, 2);
+        -:  102:}
+------------------
+        -:  103:
+        4:  104:TEST(VerificarJogoTest, OGanhaDiagonal2) {
+        1:  105:    jogoVelha oganha2 = {
+        -:  106:        {1, 1, 2},
+        -:  107:        {1, 2, 0},
+        -:  108:        {2, 0, 1}
+        -:  109:    };
+        1:  110:    int resultado = verificar_jogo(oganha2);
+        -:  111:
+       1*:  112:    ASSERT_EQ(resultado, 2);
+        -:  113:}
+------------------
+_ZN38VerificarJogoTest_OGanhaDiagonal2_TestC2Ev:
+        1:  104:TEST(VerificarJogoTest, OGanhaDiagonal2) {
+------------------
+_ZN38VerificarJogoTest_OGanhaDiagonal2_TestD0Ev:
+        1:  104:TEST(VerificarJogoTest, OGanhaDiagonal2) {
+------------------
+_ZN38VerificarJogoTest_OGanhaDiagonal2_TestD2Ev:
+        1:  104:TEST(VerificarJogoTest, OGanhaDiagonal2) {
+------------------
+_ZN38VerificarJogoTest_OGanhaDiagonal2_Test8TestBodyEv:
+        1:  104:TEST(VerificarJogoTest, OGanhaDiagonal2) {
+        1:  105:    jogoVelha oganha2 = {
+        -:  106:        {1, 1, 2},
+        -:  107:        {1, 2, 0},
+        -:  108:        {2, 0, 1}
+        -:  109:    };
+        1:  110:    int resultado = verificar_jogo(oganha2);
+        -:  111:
+       1*:  112:    ASSERT_EQ(resultado, 2);
+        -:  113:}
+------------------
+        -:  114:
+        4:  115:TEST(VerificarJogoTest, XGanhaLinha1) {
+        1:  116:    jogoVelha xganhaL1 = {
+        -:  117:        {1, 1, 1},
+        -:  118:        {0, 2, 2},
+        -:  119:        {0, 0, 0}
+        -:  120:    };
+        1:  121:    int resultado = verificar_jogo(xganhaL1);
+        -:  122:
+       1*:  123:    ASSERT_EQ(resultado, 1);
+        -:  124:}
+------------------
+_ZN35VerificarJogoTest_XGanhaLinha1_TestC2Ev:
+        1:  115:TEST(VerificarJogoTest, XGanhaLinha1) {
+------------------
+_ZN35VerificarJogoTest_XGanhaLinha1_TestD0Ev:
+        1:  115:TEST(VerificarJogoTest, XGanhaLinha1) {
+------------------
+_ZN35VerificarJogoTest_XGanhaLinha1_TestD2Ev:
+        1:  115:TEST(VerificarJogoTest, XGanhaLinha1) {
+------------------
+_ZN35VerificarJogoTest_XGanhaLinha1_Test8TestBodyEv:
+        1:  115:TEST(VerificarJogoTest, XGanhaLinha1) {
+        1:  116:    jogoVelha xganhaL1 = {
+        -:  117:        {1, 1, 1},
+        -:  118:        {0, 2, 2},
+        -:  119:        {0, 0, 0}
+        -:  120:    };
+        1:  121:    int resultado = verificar_jogo(xganhaL1);
+        -:  122:
+       1*:  123:    ASSERT_EQ(resultado, 1);
+        -:  124:}
+------------------
+        -:  125:
+        4:  126:TEST(VerificarJogoTest, XGanhaColuna1) {
+        1:  127:    jogoVelha xganhaC1 = {
+        -:  128:        {1, 1, 2},
+        -:  129:        {0, 1, 2},
+        -:  130:        {2, 1, 0}
+        -:  131:    };
+        1:  132:    int resultado = verificar_jogo(xganhaC1);
+        -:  133:
+       1*:  134:    ASSERT_EQ(resultado, 1);
+        -:  135:}
+------------------
+_ZN36VerificarJogoTest_XGanhaColuna1_TestC2Ev:
+        1:  126:TEST(VerificarJogoTest, XGanhaColuna1) {
+------------------
+_ZN36VerificarJogoTest_XGanhaColuna1_TestD0Ev:
+        1:  126:TEST(VerificarJogoTest, XGanhaColuna1) {
+------------------
+_ZN36VerificarJogoTest_XGanhaColuna1_TestD2Ev:
+        1:  126:TEST(VerificarJogoTest, XGanhaColuna1) {
+------------------
+_ZN36VerificarJogoTest_XGanhaColuna1_Test8TestBodyEv:
+        1:  126:TEST(VerificarJogoTest, XGanhaColuna1) {
+        1:  127:    jogoVelha xganhaC1 = {
+        -:  128:        {1, 1, 2},
+        -:  129:        {0, 1, 2},
+        -:  130:        {2, 1, 0}
+        -:  131:    };
+        1:  132:    int resultado = verificar_jogo(xganhaC1);
+        -:  133:
+       1*:  134:    ASSERT_EQ(resultado, 1);
+        -:  135:}
+------------------
+        -:  136:
+        4:  137:TEST(VerificarJogoTest, OGanhaLinha3) {
+        1:  138:    jogoVelha oganhaL3 = {
+        -:  139:        {1, 0, 1},
+        -:  140:        {0, 1, 1},
+        -:  141:        {2, 2, 2}
+        -:  142:    };
+        1:  143:    int resultado = verificar_jogo(oganhaL3);
+        -:  144:
+       1*:  145:    ASSERT_EQ(resultado, 2);
+        -:  146:}
+------------------
+_ZN35VerificarJogoTest_OGanhaLinha3_TestC2Ev:
+        1:  137:TEST(VerificarJogoTest, OGanhaLinha3) {
+------------------
+_ZN35VerificarJogoTest_OGanhaLinha3_TestD0Ev:
+        1:  137:TEST(VerificarJogoTest, OGanhaLinha3) {
+------------------
+_ZN35VerificarJogoTest_OGanhaLinha3_TestD2Ev:
+        1:  137:TEST(VerificarJogoTest, OGanhaLinha3) {
+------------------
+_ZN35VerificarJogoTest_OGanhaLinha3_Test8TestBodyEv:
+        1:  137:TEST(VerificarJogoTest, OGanhaLinha3) {
+        1:  138:    jogoVelha oganhaL3 = {
+        -:  139:        {1, 0, 1},
+        -:  140:        {0, 1, 1},
+        -:  141:        {2, 2, 2}
+        -:  142:    };
+        1:  143:    int resultado = verificar_jogo(oganhaL3);
+        -:  144:
+       1*:  145:    ASSERT_EQ(resultado, 2);
+        -:  146:}
+------------------
+        -:  147:
+        4:  148:TEST(VerificarJogoTest, OGanhaColuna3) {
+        1:  149:    jogoVelha oganhaC3 = {
+        -:  150:        {1, 0, 2},
+        -:  151:        {0, 1, 2},
+        -:  152:        {1, 1, 2}
+        -:  153:    };
+        1:  154:    int resultado = verificar_jogo(oganhaC3);
+        -:  155:
+       1*:  156:    ASSERT_EQ(resultado, 2);
+        -:  157:}
+------------------
+_ZN36VerificarJogoTest_OGanhaColuna3_TestC2Ev:
+        1:  148:TEST(VerificarJogoTest, OGanhaColuna3) {
+------------------
+_ZN36VerificarJogoTest_OGanhaColuna3_TestD0Ev:
+        1:  148:TEST(VerificarJogoTest, OGanhaColuna3) {
+------------------
+_ZN36VerificarJogoTest_OGanhaColuna3_TestD2Ev:
+        1:  148:TEST(VerificarJogoTest, OGanhaColuna3) {
+------------------
+_ZN36VerificarJogoTest_OGanhaColuna3_Test8TestBodyEv:
+        1:  148:TEST(VerificarJogoTest, OGanhaColuna3) {
+        1:  149:    jogoVelha oganhaC3 = {
+        -:  150:        {1, 0, 2},
+        -:  151:        {0, 1, 2},
+        -:  152:        {1, 1, 2}
+        -:  153:    };
+        1:  154:    int resultado = verificar_jogo(oganhaC3);
+        -:  155:
+       1*:  156:    ASSERT_EQ(resultado, 2);
+        -:  157:}
+------------------
+        -:  158:
+        4:  159:TEST(VerificarJogoTest, EmAndamento) {
+        1:  160:    jogoVelha andamento1 = {
+        -:  161:        {1, 0, 2},
+        -:  162:        {0, 0, 0},
+        -:  163:        {0, 0, 0}
+        -:  164:    };
+        1:  165:    int resultado = verificar_jogo(andamento1);
+        -:  166:
+       1*:  167:    ASSERT_EQ(resultado, -1);
+        -:  168:}
+------------------
+_ZN34VerificarJogoTest_EmAndamento_TestC2Ev:
+        1:  159:TEST(VerificarJogoTest, EmAndamento) {
+------------------
+_ZN34VerificarJogoTest_EmAndamento_TestD0Ev:
+        1:  159:TEST(VerificarJogoTest, EmAndamento) {
+------------------
+_ZN34VerificarJogoTest_EmAndamento_TestD2Ev:
+        1:  159:TEST(VerificarJogoTest, EmAndamento) {
+------------------
+_ZN34VerificarJogoTest_EmAndamento_Test8TestBodyEv:
+        1:  159:TEST(VerificarJogoTest, EmAndamento) {
+        1:  160:    jogoVelha andamento1 = {
+        -:  161:        {1, 0, 2},
+        -:  162:        {0, 0, 0},
+        -:  163:        {0, 0, 0}
+        -:  164:    };
+        1:  165:    int resultado = verificar_jogo(andamento1);
+        -:  166:
+       1*:  167:    ASSERT_EQ(resultado, -1);
+        -:  168:}
+------------------
+        -:  169:
+        4:  170:TEST(VerificarJogoTest, EmAndamento2) {
+        1:  171:    jogoVelha andamento2 = {
+        -:  172:        {1, 0, 2},
+        -:  173:        {0, 2, 1},
+        -:  174:        {0, 0, 1}
+        -:  175:    };
+        1:  176:    int resultado = verificar_jogo(andamento2);
+        -:  177:
+       1*:  178:    ASSERT_EQ(resultado, -1);
+        -:  179:}
+------------------
+_ZN35VerificarJogoTest_EmAndamento2_TestC2Ev:
+        1:  170:TEST(VerificarJogoTest, EmAndamento2) {
+------------------
+_ZN35VerificarJogoTest_EmAndamento2_TestD0Ev:
+        1:  170:TEST(VerificarJogoTest, EmAndamento2) {
+------------------
+_ZN35VerificarJogoTest_EmAndamento2_TestD2Ev:
+        1:  170:TEST(VerificarJogoTest, EmAndamento2) {
+------------------
+_ZN35VerificarJogoTest_EmAndamento2_Test8TestBodyEv:
+        1:  170:TEST(VerificarJogoTest, EmAndamento2) {
+        1:  171:    jogoVelha andamento2 = {
+        -:  172:        {1, 0, 2},
+        -:  173:        {0, 2, 1},
+        -:  174:        {0, 0, 1}
+        -:  175:    };
+        1:  176:    int resultado = verificar_jogo(andamento2);
+        -:  177:
+       1*:  178:    ASSERT_EQ(resultado, -1);
+        -:  179:}
+------------------
+        -:  180:
+        4:  181:TEST(VerificarJogoTest, NaoComecou) {
+        1:  182:    jogoVelha andamento3 = {
+        -:  183:        {0, 0, 0},
+        -:  184:        {0, 0, 0},
+        -:  185:        {0, 0, 0}
+        -:  186:    };
+        1:  187:    int resultado = verificar_jogo(andamento3);
+        -:  188:
+       1*:  189:    ASSERT_EQ(resultado, -1);
+        -:  190:}
+------------------
+_ZN33VerificarJogoTest_NaoComecou_TestC2Ev:
+        1:  181:TEST(VerificarJogoTest, NaoComecou) {
+------------------
+_ZN33VerificarJogoTest_NaoComecou_TestD0Ev:
+        1:  181:TEST(VerificarJogoTest, NaoComecou) {
+------------------
+_ZN33VerificarJogoTest_NaoComecou_TestD2Ev:
+        1:  181:TEST(VerificarJogoTest, NaoComecou) {
+------------------
+_ZN33VerificarJogoTest_NaoComecou_Test8TestBodyEv:
+        1:  181:TEST(VerificarJogoTest, NaoComecou) {
+        1:  182:    jogoVelha andamento3 = {
+        -:  183:        {0, 0, 0},
+        -:  184:        {0, 0, 0},
+        -:  185:        {0, 0, 0}
+        -:  186:    };
+        1:  187:    int resultado = verificar_jogo(andamento3);
+        -:  188:
+       1*:  189:    ASSERT_EQ(resultado, -1);
+        -:  190:}
+------------------
+        -:  191:
+        4:  192:TEST(VerificarJogoTest, Empate3) {
+        1:  193:    jogoVelha jogo = {
+        -:  194:        {1, 2, 1},
+        -:  195:        {2, 2, 1},
+        -:  196:        {1, 1, 2}
+        -:  197:    };
+       1*:  198:    ASSERT_EQ(verificar_jogo(jogo), 0);
+        -:  199:}
+------------------
+_ZN30VerificarJogoTest_Empate3_TestC2Ev:
+        1:  192:TEST(VerificarJogoTest, Empate3) {
+------------------
+_ZN30VerificarJogoTest_Empate3_TestD0Ev:
+        1:  192:TEST(VerificarJogoTest, Empate3) {
+------------------
+_ZN30VerificarJogoTest_Empate3_TestD2Ev:
+        1:  192:TEST(VerificarJogoTest, Empate3) {
+------------------
+_ZN30VerificarJogoTest_Empate3_Test8TestBodyEv:
+        1:  192:TEST(VerificarJogoTest, Empate3) {
+        1:  193:    jogoVelha jogo = {
+        -:  194:        {1, 2, 1},
+        -:  195:        {2, 2, 1},
+        -:  196:        {1, 1, 2}
+        -:  197:    };
+       1*:  198:    ASSERT_EQ(verificar_jogo(jogo), 0);
+        -:  199:}
+------------------
+        -:  200:
+        4:  201:TEST(VerificarJogoTest, Invalido1) {
+        1:  202:    jogoVelha jogo = {
+        -:  203:        {1, 2, 2},
+        -:  204:        {0, 0, 0},
+        -:  205:        {0, 0, 0}
+        -:  206:    };
+       1*:  207:    ASSERT_EQ(verificar_jogo(jogo), -2);
+        -:  208:}
+------------------
+_ZN32VerificarJogoTest_Invalido1_TestC2Ev:
+        1:  201:TEST(VerificarJogoTest, Invalido1) {
+------------------
+_ZN32VerificarJogoTest_Invalido1_TestD0Ev:
+        1:  201:TEST(VerificarJogoTest, Invalido1) {
+------------------
+_ZN32VerificarJogoTest_Invalido1_TestD2Ev:
+        1:  201:TEST(VerificarJogoTest, Invalido1) {
+------------------
+_ZN32VerificarJogoTest_Invalido1_Test8TestBodyEv:
+        1:  201:TEST(VerificarJogoTest, Invalido1) {
+        1:  202:    jogoVelha jogo = {
+        -:  203:        {1, 2, 2},
+        -:  204:        {0, 0, 0},
+        -:  205:        {0, 0, 0}
+        -:  206:    };
+       1*:  207:    ASSERT_EQ(verificar_jogo(jogo), -2);
+        -:  208:}
+------------------
+        -:  209:
+        1:  210:int main(int argc, char **argv) {
+        1:  211:    ::testing::InitGoogleTest(&argc, argv); // Inicializa o GTest
+        1:  212:    return RUN_ALL_TESTS();                // Executa todos os testes
+        -:  213:}

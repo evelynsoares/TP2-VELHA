@@ -189,6 +189,24 @@ TEST(VerificarJogoTest, NaoComecou) {
     ASSERT_EQ(resultado, -1);
 }
 
+TEST(VerificarJogoTest, Empate3) {
+    jogoVelha jogo = {
+        {1, 2, 1},
+        {2, 2, 1},
+        {1, 1, 2}
+    };
+    ASSERT_EQ(verificar_jogo(jogo), 0);
+}
+
+TEST(VerificarJogoTest, Invalido1) {
+    jogoVelha jogo = {
+        {1, 2, 2},
+        {0, 0, 0},
+        {0, 0, 0}
+    };
+    ASSERT_EQ(verificar_jogo(jogo), -2);
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv); // Inicializa o GTest
     return RUN_ALL_TESTS();                // Executa todos os testes
