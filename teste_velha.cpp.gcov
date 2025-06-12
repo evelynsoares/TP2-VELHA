@@ -711,7 +711,123 @@ _ZN32VerificarJogoTest_Invalido4_Test8TestBodyEv:
         -:  234:}
 ------------------
         -:  235:
-        1:  236:int main(int argc, char **argv) {
-        1:  237:    ::testing::InitGoogleTest(&argc, argv); // Inicializa o GTest
-        1:  238:    return RUN_ALL_TESTS();                // Executa todos os testes
-        -:  239:}
+        4:  236:TEST(VerificarJogoTest, InvalidoMaisDe5JogadasX) {
+        1:  237:    jogoVelha jogo = {
+        -:  238:        {1, 1, 1},
+        -:  239:        {1, 1, 1},
+        -:  240:        {0, 0, 0}
+        -:  241:    };
+       1*:  242:    ASSERT_EQ(verificar_jogo(jogo), -2);
+        -:  243:}
+------------------
+_ZN46VerificarJogoTest_InvalidoMaisDe5JogadasX_TestC2Ev:
+        1:  236:TEST(VerificarJogoTest, InvalidoMaisDe5JogadasX) {
+------------------
+_ZN46VerificarJogoTest_InvalidoMaisDe5JogadasX_TestD0Ev:
+        1:  236:TEST(VerificarJogoTest, InvalidoMaisDe5JogadasX) {
+------------------
+_ZN46VerificarJogoTest_InvalidoMaisDe5JogadasX_TestD2Ev:
+        1:  236:TEST(VerificarJogoTest, InvalidoMaisDe5JogadasX) {
+------------------
+_ZN46VerificarJogoTest_InvalidoMaisDe5JogadasX_Test8TestBodyEv:
+        1:  236:TEST(VerificarJogoTest, InvalidoMaisDe5JogadasX) {
+        1:  237:    jogoVelha jogo = {
+        -:  238:        {1, 1, 1},
+        -:  239:        {1, 1, 1},
+        -:  240:        {0, 0, 0}
+        -:  241:    };
+       1*:  242:    ASSERT_EQ(verificar_jogo(jogo), -2);
+        -:  243:}
+------------------
+        -:  244:
+        4:  245:TEST(VerificarJogoTest, InvalidoMaisDe5JogadasO) {
+        1:  246:    jogoVelha jogo = {
+        -:  247:        {2, 2, 2},
+        -:  248:        {2, 2, 2},
+        -:  249:        {0, 0, 0}
+        -:  250:    };
+       1*:  251:    ASSERT_EQ(verificar_jogo(jogo), -2);
+        -:  252:}
+------------------
+_ZN46VerificarJogoTest_InvalidoMaisDe5JogadasO_TestC2Ev:
+        1:  245:TEST(VerificarJogoTest, InvalidoMaisDe5JogadasO) {
+------------------
+_ZN46VerificarJogoTest_InvalidoMaisDe5JogadasO_TestD0Ev:
+        1:  245:TEST(VerificarJogoTest, InvalidoMaisDe5JogadasO) {
+------------------
+_ZN46VerificarJogoTest_InvalidoMaisDe5JogadasO_TestD2Ev:
+        1:  245:TEST(VerificarJogoTest, InvalidoMaisDe5JogadasO) {
+------------------
+_ZN46VerificarJogoTest_InvalidoMaisDe5JogadasO_Test8TestBodyEv:
+        1:  245:TEST(VerificarJogoTest, InvalidoMaisDe5JogadasO) {
+        1:  246:    jogoVelha jogo = {
+        -:  247:        {2, 2, 2},
+        -:  248:        {2, 2, 2},
+        -:  249:        {0, 0, 0}
+        -:  250:    };
+       1*:  251:    ASSERT_EQ(verificar_jogo(jogo), -2);
+        -:  252:}
+------------------
+        -:  253:
+        4:  254:TEST(VerificarJogoTest, InvalidoOJogouMaisQueX) {
+        1:  255:    jogoVelha jogo = {
+        -:  256:        {2, 2, 0},
+        -:  257:        {1, 2, 0},
+        -:  258:        {1, 0, 0}
+        -:  259:    };
+       1*:  260:    ASSERT_EQ(verificar_jogo(jogo), -2);
+        -:  261:}
+------------------
+_ZN45VerificarJogoTest_InvalidoOJogouMaisQueX_TestC2Ev:
+        1:  254:TEST(VerificarJogoTest, InvalidoOJogouMaisQueX) {
+------------------
+_ZN45VerificarJogoTest_InvalidoOJogouMaisQueX_TestD0Ev:
+        1:  254:TEST(VerificarJogoTest, InvalidoOJogouMaisQueX) {
+------------------
+_ZN45VerificarJogoTest_InvalidoOJogouMaisQueX_TestD2Ev:
+        1:  254:TEST(VerificarJogoTest, InvalidoOJogouMaisQueX) {
+------------------
+_ZN45VerificarJogoTest_InvalidoOJogouMaisQueX_Test8TestBodyEv:
+        1:  254:TEST(VerificarJogoTest, InvalidoOJogouMaisQueX) {
+        1:  255:    jogoVelha jogo = {
+        -:  256:        {2, 2, 0},
+        -:  257:        {1, 2, 0},
+        -:  258:        {1, 0, 0}
+        -:  259:    };
+       1*:  260:    ASSERT_EQ(verificar_jogo(jogo), -2);
+        -:  261:}
+------------------
+        -:  262:
+        4:  263:TEST(VerificarJogoTest, InvalidoDiferencaTurnoMaiorQue1) {
+        1:  264:    jogoVelha jogo = {
+        -:  265:        {1, 1, 1},
+        -:  266:        {1, 2, 0},
+        -:  267:        {0, 0, 0}
+        -:  268:    };
+       1*:  269:    ASSERT_EQ(verificar_jogo(jogo), -2);
+        -:  270:}
+------------------
+_ZN54VerificarJogoTest_InvalidoDiferencaTurnoMaiorQue1_TestC2Ev:
+        1:  263:TEST(VerificarJogoTest, InvalidoDiferencaTurnoMaiorQue1) {
+------------------
+_ZN54VerificarJogoTest_InvalidoDiferencaTurnoMaiorQue1_TestD0Ev:
+        1:  263:TEST(VerificarJogoTest, InvalidoDiferencaTurnoMaiorQue1) {
+------------------
+_ZN54VerificarJogoTest_InvalidoDiferencaTurnoMaiorQue1_TestD2Ev:
+        1:  263:TEST(VerificarJogoTest, InvalidoDiferencaTurnoMaiorQue1) {
+------------------
+_ZN54VerificarJogoTest_InvalidoDiferencaTurnoMaiorQue1_Test8TestBodyEv:
+        1:  263:TEST(VerificarJogoTest, InvalidoDiferencaTurnoMaiorQue1) {
+        1:  264:    jogoVelha jogo = {
+        -:  265:        {1, 1, 1},
+        -:  266:        {1, 2, 0},
+        -:  267:        {0, 0, 0}
+        -:  268:    };
+       1*:  269:    ASSERT_EQ(verificar_jogo(jogo), -2);
+        -:  270:}
+------------------
+        -:  271:
+        1:  272:int main(int argc, char **argv) {
+        1:  273:    ::testing::InitGoogleTest(&argc, argv); // Inicializa o GTest
+        1:  274:    return RUN_ALL_TESTS();                // Executa todos os testes
+        -:  275:}

@@ -439,13 +439,13 @@
         -:  435:// of a Test object.
         -:  436:class TestFactoryBase {
         -:  437: public:
-      22*:  438:  virtual ~TestFactoryBase() = default;
+      26*:  438:  virtual ~TestFactoryBase() = default;
 ------------------
 _ZN7testing8internal15TestFactoryBaseD0Ev:
     #####:  438:  virtual ~TestFactoryBase() = default;
 ------------------
 _ZN7testing8internal15TestFactoryBaseD2Ev:
-       22:  438:  virtual ~TestFactoryBase() = default;
+       26:  438:  virtual ~TestFactoryBase() = default;
 ------------------
         -:  439:
         -:  440:  // Creates a test instance to run. The instance is both created and destroyed
@@ -453,7 +453,7 @@ _ZN7testing8internal15TestFactoryBaseD2Ev:
         -:  442:  virtual Test* CreateTest() = 0;
         -:  443:
         -:  444: protected:
-       22:  445:  TestFactoryBase() {}
+       26:  445:  TestFactoryBase() {}
         -:  446:
         -:  447: private:
         -:  448:  TestFactoryBase(const TestFactoryBase&) = delete;
@@ -465,9 +465,21 @@ _ZN7testing8internal15TestFactoryBaseD2Ev:
         -:  454:template <class TestClass>
         -:  455:class TestFactoryImpl : public TestFactoryBase {
         -:  456: public:
-       22:  457:  Test* CreateTest() override { return new TestClass; }
+       26:  457:  Test* CreateTest() override { return new TestClass; }
 ------------------
-_ZN7testing8internal15TestFactoryImplI36VerificarJogoTest_XGanhaColuna1_TestE10CreateTestEv:
+_ZN7testing8internal15TestFactoryImplI36VerificarJogoTest_OGanhaColuna3_TestE10CreateTestEv:
+        1:  457:  Test* CreateTest() override { return new TestClass; }
+------------------
+_ZN7testing8internal15TestFactoryImplI54VerificarJogoTest_InvalidoDiferencaTurnoMaiorQue1_TestE10CreateTestEv:
+        1:  457:  Test* CreateTest() override { return new TestClass; }
+------------------
+_ZN7testing8internal15TestFactoryImplI45VerificarJogoTest_InvalidoOJogouMaisQueX_TestE10CreateTestEv:
+        1:  457:  Test* CreateTest() override { return new TestClass; }
+------------------
+_ZN7testing8internal15TestFactoryImplI46VerificarJogoTest_InvalidoMaisDe5JogadasO_TestE10CreateTestEv:
+        1:  457:  Test* CreateTest() override { return new TestClass; }
+------------------
+_ZN7testing8internal15TestFactoryImplI46VerificarJogoTest_InvalidoMaisDe5JogadasX_TestE10CreateTestEv:
         1:  457:  Test* CreateTest() override { return new TestClass; }
 ------------------
 _ZN7testing8internal15TestFactoryImplI32VerificarJogoTest_Invalido4_TestE10CreateTestEv:
@@ -494,13 +506,13 @@ _ZN7testing8internal15TestFactoryImplI35VerificarJogoTest_EmAndamento2_TestE10Cr
 _ZN7testing8internal15TestFactoryImplI34VerificarJogoTest_EmAndamento_TestE10CreateTestEv:
         1:  457:  Test* CreateTest() override { return new TestClass; }
 ------------------
-_ZN7testing8internal15TestFactoryImplI36VerificarJogoTest_OGanhaColuna3_TestE10CreateTestEv:
+_ZN7testing8internal15TestFactoryImplI48VerificarJogoTest_RegrasVioladasPorJogadorX_TestE10CreateTestEv:
         1:  457:  Test* CreateTest() override { return new TestClass; }
 ------------------
 _ZN7testing8internal15TestFactoryImplI35VerificarJogoTest_OGanhaLinha3_TestE10CreateTestEv:
         1:  457:  Test* CreateTest() override { return new TestClass; }
 ------------------
-_ZN7testing8internal15TestFactoryImplI48VerificarJogoTest_RegrasVioladasPorJogadorX_TestE10CreateTestEv:
+_ZN7testing8internal15TestFactoryImplI36VerificarJogoTest_XGanhaColuna1_TestE10CreateTestEv:
         1:  457:  Test* CreateTest() override { return new TestClass; }
 ------------------
 _ZN7testing8internal15TestFactoryImplI35VerificarJogoTest_XGanhaLinha1_TestE10CreateTestEv:
@@ -553,8 +565,8 @@ _ZN7testing8internal15TestFactoryImplI48VerificarJogoTest_RegrasVioladasPorJogad
         -:  475:using TearDownTestSuiteFunc = void (*)();
         -:  476:
         -:  477:struct CodeLocation {
-       22:  478:  CodeLocation(const std::string& a_file, int a_line)
-       22:  479:      : file(a_file), line(a_line) {}
+       26:  478:  CodeLocation(const std::string& a_file, int a_line)
+       26:  479:      : file(a_file), line(a_line) {}
         -:  480:
         -:  481:  std::string file;
         -:  482:  int line;
@@ -566,9 +578,9 @@ _ZN7testing8internal15TestFactoryImplI48VerificarJogoTest_RegrasVioladasPorJogad
         -:  488:// Utility functions to help SuiteApiResolver
         -:  489:using SetUpTearDownSuiteFuncType = void (*)();
         -:  490:
-       88:  491:inline SetUpTearDownSuiteFuncType GetNotDefaultOrNull(
+      104:  491:inline SetUpTearDownSuiteFuncType GetNotDefaultOrNull(
         -:  492:    SetUpTearDownSuiteFuncType a, SetUpTearDownSuiteFuncType def) {
-      88*:  493:  return a == def ? nullptr : a;
+     104*:  493:  return a == def ? nullptr : a;
         -:  494:}
         -:  495:
         -:  496:template <typename T>
@@ -581,20 +593,20 @@ _ZN7testing8internal15TestFactoryImplI48VerificarJogoTest_RegrasVioladasPorJogad
         -:  503:  using Test =
         -:  504:      typename std::conditional<sizeof(T) != 0, ::testing::Test, void>::type;
         -:  505:
-       22:  506:  static SetUpTearDownSuiteFuncType GetSetUpCaseOrSuite(const char* filename,
+       26:  506:  static SetUpTearDownSuiteFuncType GetSetUpCaseOrSuite(const char* filename,
         -:  507:                                                        int line_num) {
         -:  508:#ifndef GTEST_REMOVE_LEGACY_TEST_CASEAPI_
         -:  509:    SetUpTearDownSuiteFuncType test_case_fp =
-       22:  510:        GetNotDefaultOrNull(&T::SetUpTestCase, &Test::SetUpTestCase);
+       26:  510:        GetNotDefaultOrNull(&T::SetUpTestCase, &Test::SetUpTestCase);
         -:  511:    SetUpTearDownSuiteFuncType test_suite_fp =
-       22:  512:        GetNotDefaultOrNull(&T::SetUpTestSuite, &Test::SetUpTestSuite);
+       26:  512:        GetNotDefaultOrNull(&T::SetUpTestSuite, &Test::SetUpTestSuite);
         -:  513:
-      22*:  514:    GTEST_CHECK_(!test_case_fp || !test_suite_fp)
+      26*:  514:    GTEST_CHECK_(!test_case_fp || !test_suite_fp)
         -:  515:        << "Test can not provide both SetUpTestSuite and SetUpTestCase, please "
         -:  516:           "make sure there is only one present at "
     #####:  517:        << filename << ":" << line_num;
         -:  518:
-      22*:  519:    return test_case_fp != nullptr ? test_case_fp : test_suite_fp;
+      26*:  519:    return test_case_fp != nullptr ? test_case_fp : test_suite_fp;
         -:  520:#else
         -:  521:    (void)(filename);
         -:  522:    (void)(line_num);
@@ -602,20 +614,20 @@ _ZN7testing8internal15TestFactoryImplI48VerificarJogoTest_RegrasVioladasPorJogad
         -:  524:#endif
         -:  525:  }
         -:  526:
-       22:  527:  static SetUpTearDownSuiteFuncType GetTearDownCaseOrSuite(const char* filename,
+       26:  527:  static SetUpTearDownSuiteFuncType GetTearDownCaseOrSuite(const char* filename,
         -:  528:                                                           int line_num) {
         -:  529:#ifndef GTEST_REMOVE_LEGACY_TEST_CASEAPI_
         -:  530:    SetUpTearDownSuiteFuncType test_case_fp =
-       22:  531:        GetNotDefaultOrNull(&T::TearDownTestCase, &Test::TearDownTestCase);
+       26:  531:        GetNotDefaultOrNull(&T::TearDownTestCase, &Test::TearDownTestCase);
         -:  532:    SetUpTearDownSuiteFuncType test_suite_fp =
-       22:  533:        GetNotDefaultOrNull(&T::TearDownTestSuite, &Test::TearDownTestSuite);
+       26:  533:        GetNotDefaultOrNull(&T::TearDownTestSuite, &Test::TearDownTestSuite);
         -:  534:
-      22*:  535:    GTEST_CHECK_(!test_case_fp || !test_suite_fp)
+      26*:  535:    GTEST_CHECK_(!test_case_fp || !test_suite_fp)
         -:  536:        << "Test can not provide both TearDownTestSuite and TearDownTestCase,"
         -:  537:           " please make sure there is only one present at"
     #####:  538:        << filename << ":" << line_num;
         -:  539:
-      22*:  540:    return test_case_fp != nullptr ? test_case_fp : test_suite_fp;
+      26*:  540:    return test_case_fp != nullptr ? test_case_fp : test_suite_fp;
         -:  541:#else
         -:  542:    (void)(filename);
         -:  543:    (void)(line_num);

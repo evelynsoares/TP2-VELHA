@@ -30,7 +30,6 @@ int verificar_jogo(jogoVelha jogo){
 
 
     /// Condicoes para ganhar
-    int vencedor;
     int x_ganha = 0, o_ganha = 0;
 
     /// Linhas 
