@@ -1,22 +1,22 @@
         -:    0:Source:velha.cpp
         -:    0:Graph:velha.gcno
         -:    0:Data:velha.gcda
-        -:    0:Runs:9
+        -:    0:Runs:10
         -:    1:#include "velha.hpp"
         -:    2:#include <cmath>
         -:    3:
-      169:    4:int verificar_jogo(jogoVelha jogo){
+      191:    4:int verificar_jogo(jogoVelha jogo){
         -:    5:    /**
         -:    6:     * Percorre a matriz 3x3 para cada estado de jogo.
         -:    7:     * 0 vazio, 1 X, 2 O
         -:    8:    */
         -:    9:
-      169:   10:    int count_x = 0, count_o = 0;
+      191:   10:    int count_x = 0, count_o = 0;
         -:   11:
-      676:   12:    for(int i = 0; i < 3; i++) {
-     2028:   13:        for (int j = 0; j < 3; j++){
-     1521:   14:            if (jogo[i][j] == 1) count_x++;
-      938:   15:            else if (jogo[i][j] == 2) count_o++;
+      764:   12:    for(int i = 0; i < 3; i++) {
+     2292:   13:        for (int j = 0; j < 3; j++){
+     1719:   14:            if (jogo[i][j] == 1) count_x++;
+     1062:   15:            else if (jogo[i][j] == 2) count_o++;
         -:   16:        }
         -:   17:    }
         -:   18:    //  ( " " ) (' ')
@@ -24,55 +24,55 @@
         -:   20:    /**
         -:   21:     * Se um jogador inseriu O ou X em mais de 5 posições as regras foram violadas: retorna -2
         -:   22:    */
-      169:   23:    if (count_x > 5 || count_o > 5) return -2;
+      191:   23:    if (count_x > 5 || count_o > 5) return -2;
         -:   24:
         -:   25:    /** 
         -:   26:     * A diferença entre o número de Xs e Os não pode ser maior que 1
         -:   27:     * O não pode ter mais peças que X (X começa a partida)
         -:   28:    */
-      151:   29:    if (count_o > count_x || std::abs(count_x - count_o) > 1) return -2;
+      171:   29:    if (count_o > count_x || std::abs(count_x - count_o) > 1) return -2;
         -:   30:
         -:   31:
         -:   32:    /// Condicoes para ganhar
         -:   33:    int vencedor;
-      128:   34:    int x_ganha = 0, o_ganha = 0;
+      144:   34:    int x_ganha = 0, o_ganha = 0;
         -:   35:
         -:   36:    /// Linhas 
-      512:   37:    for (int i = 0; i < 3; i++){
-      384:   38:        if (jogo[i][0] == 1 && jogo[i][1] == 1 && jogo[i][2] == 1) x_ganha++;
-      374:   39:        else if (jogo[i][0] == 2 && jogo[i][1] == 2 && jogo[i][2] == 2) o_ganha++;
+      576:   37:    for (int i = 0; i < 3; i++){
+      432:   38:        if (jogo[i][0] == 1 && jogo[i][1] == 1 && jogo[i][2] == 1) x_ganha++;
+      420:   39:        else if (jogo[i][0] == 2 && jogo[i][1] == 2 && jogo[i][2] == 2) o_ganha++;
         -:   40:    }
         -:   41:
         -:   42:    /// Colunas
-      512:   43:    for (int j = 0; j < 3; j++){
-      384:   44:        if (jogo[0][j] == 1 && jogo[1][j] == 1 && jogo[2][j] == 1) x_ganha++;
-      372:   45:        else if (jogo[0][j] == 2 && jogo[1][j] == 2 && jogo[2][j] == 2) o_ganha++;
+      576:   43:    for (int j = 0; j < 3; j++){
+      432:   44:        if (jogo[0][j] == 1 && jogo[1][j] == 1 && jogo[2][j] == 1) x_ganha++;
+      418:   45:        else if (jogo[0][j] == 2 && jogo[1][j] == 2 && jogo[2][j] == 2) o_ganha++;
         -:   46:    }
         -:   47:
         -:   48:    /// Diagonais
-      128:   49:    if (jogo[0][0] == 1 && jogo[1][1] == 1 && jogo[2][2] == 1) x_ganha++;
-      119:   50:    else if (jogo[0][0] == 2 && jogo[1][1] == 2 && jogo[2][2] == 2) o_ganha++;
-      110:   51:    else if (jogo[2][0] == 1 && jogo[1][1] == 1 && jogo[0][2] == 1) x_ganha++;
-      101:   52:    else if (jogo[2][0] == 2 && jogo[1][1] == 2 && jogo[0][2] == 2) o_ganha++;
+      144:   49:    if (jogo[0][0] == 1 && jogo[1][1] == 1 && jogo[2][2] == 1) x_ganha++;
+      134:   50:    else if (jogo[0][0] == 2 && jogo[1][1] == 2 && jogo[2][2] == 2) o_ganha++;
+      124:   51:    else if (jogo[2][0] == 1 && jogo[1][1] == 1 && jogo[0][2] == 1) x_ganha++;
+      114:   52:    else if (jogo[2][0] == 2 && jogo[1][1] == 2 && jogo[0][2] == 2) o_ganha++;
         -:   53:
         -:   54:    /// Nao é possivei os dois ganharem
-      128:   55:    if (x_ganha > 0 && o_ganha > 0) return -2;
+      144:   55:    if (x_ganha > 0 && o_ganha > 0) return -2;
         -:   56:
-      124:   57:    if (x_ganha > 0) {
+      138:   57:    if (x_ganha > 0) {
         -:   58:        /// X só pode vencer se ele tiver uma jogada a mais
-       36:   59:        if (count_x == count_o + 1) return 1;
+       40:   59:        if (count_x == count_o + 1) return 1;
     #####:   60:        else return -2;
         -:   61:    }
         -:   62:
-       88:   63:    if (o_ganha > 0) {
+       98:   63:    if (o_ganha > 0) {
         -:   64:        /// O só pode vencer se tiver jogado <= número de vezes que X 
-       36:   65:        if (count_o == count_x || count_o == count_x - 1) return 2;
+       40:   65:        if (count_o == count_x || count_o == count_x - 1) return 2;
     #####:   66:        else return -2;
         -:   67:    }
         -:   68:
         -:   69:    /// Jogo empatado
-       52:   70:    if ((count_x + count_o) == 9) return 0;
+       58:   70:    if ((count_x + count_o) == 9) return 0;
         -:   71:
         -:   72:    /// Jogo em andamento
-       27:   73:    return -1;
+       30:   73:    return -1;
         -:   74:}

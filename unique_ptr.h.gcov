@@ -219,10 +219,10 @@ _ZNKSt14default_deleteINSt7__cxx1118basic_stringstreamIcSt11char_traitsIcESaIcEE
         -:  194:      }
         -:  195:
         -:  196:      _GLIBCXX23_CONSTEXPR
-      21*:  197:      pointer&   _M_ptr() noexcept { return std::get<0>(_M_t); }
+      22*:  197:      pointer&   _M_ptr() noexcept { return std::get<0>(_M_t); }
 ------------------
 _ZNSt15__uniq_ptr_implINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt14default_deleteIS5_EE6_M_ptrEv:
-       21:  197:      pointer&   _M_ptr() noexcept { return std::get<0>(_M_t); }
+       22:  197:      pointer&   _M_ptr() noexcept { return std::get<0>(_M_t); }
 ------------------
 _ZNSt15__uniq_ptr_implINSt7__cxx1118basic_stringstreamIcSt11char_traitsIcESaIcEEESt14default_deleteIS5_EE6_M_ptrEv:
     #####:  197:      pointer&   _M_ptr() noexcept { return std::get<0>(_M_t); }
@@ -434,26 +434,26 @@ _ZNSt15__uniq_ptr_implINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt14d
         -:  395:#if __cplusplus > 202002L && __cpp_constexpr_dynamic_alloc
         -:  396:      constexpr
         -:  397:#endif
-      21*:  398:      ~unique_ptr() noexcept
+      22*:  398:      ~unique_ptr() noexcept
         -:  399:      {
         -:  400:	static_assert(__is_invocable<deleter_type&, pointer>::value,
         -:  401:		      "unique_ptr's deleter must be invocable with a pointer");
-      21*:  402:	auto& __ptr = _M_t._M_ptr();
-      21*:  403:	if (__ptr != nullptr)
+      22*:  402:	auto& __ptr = _M_t._M_ptr();
+      22*:  403:	if (__ptr != nullptr)
     #####:  404:	  get_deleter()(std::move(__ptr));
-      21*:  405:	__ptr = pointer();
-      21*:  406:      }
+      22*:  405:	__ptr = pointer();
+      22*:  406:      }
 ------------------
 _ZNSt10unique_ptrINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt14default_deleteIS5_EED2Ev:
-       21:  398:      ~unique_ptr() noexcept
+       22:  398:      ~unique_ptr() noexcept
         -:  399:      {
         -:  400:	static_assert(__is_invocable<deleter_type&, pointer>::value,
         -:  401:		      "unique_ptr's deleter must be invocable with a pointer");
-       21:  402:	auto& __ptr = _M_t._M_ptr();
-       21:  403:	if (__ptr != nullptr)
+       22:  402:	auto& __ptr = _M_t._M_ptr();
+       22:  403:	if (__ptr != nullptr)
     #####:  404:	  get_deleter()(std::move(__ptr));
-       21:  405:	__ptr = pointer();
-       21:  406:      }
+       22:  405:	__ptr = pointer();
+       22:  406:      }
 ------------------
 _ZNSt10unique_ptrINSt7__cxx1118basic_stringstreamIcSt11char_traitsIcESaIcEEESt14default_deleteIS5_EED2Ev:
     #####:  398:      ~unique_ptr() noexcept

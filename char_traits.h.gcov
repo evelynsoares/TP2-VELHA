@@ -394,13 +394,13 @@
         -:  390:      }
         -:  391:
         -:  392:      static _GLIBCXX17_CONSTEXPR size_t
-       21:  393:      length(const char_type* __s)
+       22:  393:      length(const char_type* __s)
         -:  394:      {
         -:  395:#if __cplusplus >= 201703L
-       21:  396:	if (std::__is_constant_evaluated())
+       22:  396:	if (std::__is_constant_evaluated())
     #####:  397:	  return __gnu_cxx::char_traits<char_type>::length(__s);
         -:  398:#endif
-       21:  399:	return __builtin_strlen(__s);
+       22:  399:	return __builtin_strlen(__s);
         -:  400:      }
         -:  401:
         -:  402:      static _GLIBCXX17_CONSTEXPR const char_type*

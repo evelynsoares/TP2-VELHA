@@ -682,7 +682,36 @@ _ZN32VerificarJogoTest_Invalido3_Test8TestBodyEv:
         -:  225:}
 ------------------
         -:  226:
-        1:  227:int main(int argc, char **argv) {
-        1:  228:    ::testing::InitGoogleTest(&argc, argv); // Inicializa o GTest
-        1:  229:    return RUN_ALL_TESTS();                // Executa todos os testes
-        -:  230:}
+        4:  227:TEST(VerificarJogoTest, Invalido4) {
+        1:  228:    jogoVelha jogo = {
+        -:  229:        {2, 1, 0},
+        -:  230:        {2, 1, 0},
+        -:  231:        {1, 2, 2}
+        -:  232:    };
+       1*:  233:    ASSERT_EQ(verificar_jogo(jogo), -2);
+        -:  234:}
+------------------
+_ZN32VerificarJogoTest_Invalido4_TestC2Ev:
+        1:  227:TEST(VerificarJogoTest, Invalido4) {
+------------------
+_ZN32VerificarJogoTest_Invalido4_TestD0Ev:
+        1:  227:TEST(VerificarJogoTest, Invalido4) {
+------------------
+_ZN32VerificarJogoTest_Invalido4_TestD2Ev:
+        1:  227:TEST(VerificarJogoTest, Invalido4) {
+------------------
+_ZN32VerificarJogoTest_Invalido4_Test8TestBodyEv:
+        1:  227:TEST(VerificarJogoTest, Invalido4) {
+        1:  228:    jogoVelha jogo = {
+        -:  229:        {2, 1, 0},
+        -:  230:        {2, 1, 0},
+        -:  231:        {1, 2, 2}
+        -:  232:    };
+       1*:  233:    ASSERT_EQ(verificar_jogo(jogo), -2);
+        -:  234:}
+------------------
+        -:  235:
+        1:  236:int main(int argc, char **argv) {
+        1:  237:    ::testing::InitGoogleTest(&argc, argv); // Inicializa o GTest
+        1:  238:    return RUN_ALL_TESTS();                // Executa todos os testes
+        -:  239:}
