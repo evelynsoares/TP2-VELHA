@@ -349,6 +349,62 @@ TEST(VerificarJogoTest, EmpateAlternado) {
     ASSERT_EQ(verificar_jogo(jogo), 0);
 }
 
+TEST(VerificarJogoTest, EmAndamentoCom8Jogadas) {
+    jogoVelha jogo = {
+        {1, 2, 1},
+        {2, 1, 2},
+        {2, 1, 0}
+    };
+    ASSERT_EQ(verificar_jogo(jogo), -1);
+}
+
+
+TEST(TesteVerificarJogo, EmpateComEX) {
+    jogoVelha jogo = {
+        {1, 2, 1},
+        {1, 2, 2},
+        {2, 1, 1}
+    };
+    EXPECT_EQ(verificar_jogo(jogo), 0);
+}
+
+TEST(TesteVerificarJogo, VitoriaX) {
+    jogoVelha jogo = {
+        {1, 1, 1},
+        {2, 2, 0},
+        {0, 0, 0}
+    };
+    EXPECT_EQ(verificar_jogo(jogo), 1);
+}
+
+TEST(TesteVerificarJogo, VitoriaO) {
+    jogoVelha jogo = {
+        {2, 1, 1},
+        {2, 1, 0},
+        {2, 0, 0}
+    };
+    EXPECT_EQ(verificar_jogo(jogo), 2);
+}
+
+TEST(TesteVerificarJogo, EmAndamento) {
+    jogoVelha jogo = {
+        {1, 2, 1},
+        {2, 0, 1},
+        {1, 0, 2}
+    };
+    EXPECT_EQ(verificar_jogo(jogo), -1);
+}
+
+TEST(TesteVerificarJogo, Invalido) {
+    jogoVelha jogo = {
+        {1, 1, 1},
+        {1, 1, 1},
+        {2, 2, 2}
+    };
+    EXPECT_EQ(verificar_jogo(jogo), -2);
+}
+
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv); // Inicializa o GTest
     return RUN_ALL_TESTS();                // Executa todos os testes

@@ -1,7 +1,7 @@
         -:    0:Source:/usr/include/gtest/internal/gtest-internal.h
         -:    0:Graph:teste_velha.gcno
         -:    0:Data:teste_velha.gcda
-        -:    0:Runs:3
+        -:    0:Runs:2
         -:    1:// Copyright 2005, Google Inc.
         -:    2:// All rights reserved.
         -:    3://
@@ -439,13 +439,13 @@
         -:  435:// of a Test object.
         -:  436:class TestFactoryBase {
         -:  437: public:
-     105*:  438:  virtual ~TestFactoryBase() = default;
+      82*:  438:  virtual ~TestFactoryBase() = default;
 ------------------
 _ZN7testing8internal15TestFactoryBaseD0Ev:
     #####:  438:  virtual ~TestFactoryBase() = default;
 ------------------
 _ZN7testing8internal15TestFactoryBaseD2Ev:
-      105:  438:  virtual ~TestFactoryBase() = default;
+       82:  438:  virtual ~TestFactoryBase() = default;
 ------------------
         -:  439:
         -:  440:  // Creates a test instance to run. The instance is both created and destroyed
@@ -453,7 +453,7 @@ _ZN7testing8internal15TestFactoryBaseD2Ev:
         -:  442:  virtual Test* CreateTest() = 0;
         -:  443:
         -:  444: protected:
-      105:  445:  TestFactoryBase() {}
+       82:  445:  TestFactoryBase() {}
         -:  446:
         -:  447: private:
         -:  448:  TestFactoryBase(const TestFactoryBase&) = delete;
@@ -465,112 +465,130 @@ _ZN7testing8internal15TestFactoryBaseD2Ev:
         -:  454:template <class TestClass>
         -:  455:class TestFactoryImpl : public TestFactoryBase {
         -:  456: public:
-      105:  457:  Test* CreateTest() override { return new TestClass; }
-------------------
-_ZN7testing8internal15TestFactoryImplI55VerificarJogoTest_InvalidoXVenceuComContagemErrada_TestE10CreateTestEv:
-        3:  457:  Test* CreateTest() override { return new TestClass; }
-------------------
-_ZN7testing8internal15TestFactoryImplI32VerificarJogoTest_Invalido1_TestE10CreateTestEv:
-        3:  457:  Test* CreateTest() override { return new TestClass; }
-------------------
-_ZN7testing8internal15TestFactoryImplI32VerificarJogoTest_Invalido2_TestE10CreateTestEv:
-        3:  457:  Test* CreateTest() override { return new TestClass; }
-------------------
-_ZN7testing8internal15TestFactoryImplI32VerificarJogoTest_Invalido3_TestE10CreateTestEv:
-        3:  457:  Test* CreateTest() override { return new TestClass; }
-------------------
-_ZN7testing8internal15TestFactoryImplI32VerificarJogoTest_Invalido4_TestE10CreateTestEv:
-        3:  457:  Test* CreateTest() override { return new TestClass; }
-------------------
-_ZN7testing8internal15TestFactoryImplI46VerificarJogoTest_InvalidoMaisDe5JogadasX_TestE10CreateTestEv:
-        3:  457:  Test* CreateTest() override { return new TestClass; }
-------------------
-_ZN7testing8internal15TestFactoryImplI46VerificarJogoTest_InvalidoMaisDe5JogadasO_TestE10CreateTestEv:
-        3:  457:  Test* CreateTest() override { return new TestClass; }
-------------------
-_ZN7testing8internal15TestFactoryImplI45VerificarJogoTest_InvalidoOJogouMaisQueX_TestE10CreateTestEv:
-        3:  457:  Test* CreateTest() override { return new TestClass; }
-------------------
-_ZN7testing8internal15TestFactoryImplI54VerificarJogoTest_InvalidoDiferencaTurnoMaiorQue1_TestE10CreateTestEv:
-        3:  457:  Test* CreateTest() override { return new TestClass; }
-------------------
-_ZN7testing8internal15TestFactoryImplI30VerificarJogoTest_Empate3_TestE10CreateTestEv:
-        3:  457:  Test* CreateTest() override { return new TestClass; }
-------------------
-_ZN7testing8internal15TestFactoryImplI55VerificarJogoTest_InvalidoOVenceuComContagemErrada_TestE10CreateTestEv:
-        3:  457:  Test* CreateTest() override { return new TestClass; }
-------------------
-_ZN7testing8internal15TestFactoryImplI47VerificarJogoTest_InvalidoXGanhouDuasVezes_TestE10CreateTestEv:
-        3:  457:  Test* CreateTest() override { return new TestClass; }
-------------------
-_ZN7testing8internal15TestFactoryImplI47VerificarJogoTest_InvalidoOGanhouDuasVezes_TestE10CreateTestEv:
-        3:  457:  Test* CreateTest() override { return new TestClass; }
-------------------
-_ZN7testing8internal15TestFactoryImplI47VerificarJogoTest_XVenceCom5JogadasXEOCom4_TestE10CreateTestEv:
-        3:  457:  Test* CreateTest() override { return new TestClass; }
+       82:  457:  Test* CreateTest() override { return new TestClass; }
 ------------------
 _ZN7testing8internal15TestFactoryImplI48VerificarJogoTest_OVenceComContagemInValida_TestE10CreateTestEv:
-        3:  457:  Test* CreateTest() override { return new TestClass; }
+        2:  457:  Test* CreateTest() override { return new TestClass; }
+------------------
+_ZN7testing8internal15TestFactoryImplI32VerificarJogoTest_Invalido4_TestE10CreateTestEv:
+        2:  457:  Test* CreateTest() override { return new TestClass; }
+------------------
+_ZN7testing8internal15TestFactoryImplI46VerificarJogoTest_InvalidoMaisDe5JogadasX_TestE10CreateTestEv:
+        2:  457:  Test* CreateTest() override { return new TestClass; }
+------------------
+_ZN7testing8internal15TestFactoryImplI46VerificarJogoTest_InvalidoMaisDe5JogadasO_TestE10CreateTestEv:
+        2:  457:  Test* CreateTest() override { return new TestClass; }
+------------------
+_ZN7testing8internal15TestFactoryImplI45VerificarJogoTest_InvalidoOJogouMaisQueX_TestE10CreateTestEv:
+        2:  457:  Test* CreateTest() override { return new TestClass; }
+------------------
+_ZN7testing8internal15TestFactoryImplI54VerificarJogoTest_InvalidoDiferencaTurnoMaiorQue1_TestE10CreateTestEv:
+        2:  457:  Test* CreateTest() override { return new TestClass; }
+------------------
+_ZN7testing8internal15TestFactoryImplI55VerificarJogoTest_InvalidoXVenceuComContagemErrada_TestE10CreateTestEv:
+        2:  457:  Test* CreateTest() override { return new TestClass; }
+------------------
+_ZN7testing8internal15TestFactoryImplI55VerificarJogoTest_InvalidoOVenceuComContagemErrada_TestE10CreateTestEv:
+        2:  457:  Test* CreateTest() override { return new TestClass; }
+------------------
+_ZN7testing8internal15TestFactoryImplI47VerificarJogoTest_InvalidoXGanhouDuasVezes_TestE10CreateTestEv:
+        2:  457:  Test* CreateTest() override { return new TestClass; }
+------------------
+_ZN7testing8internal15TestFactoryImplI47VerificarJogoTest_InvalidoOGanhouDuasVezes_TestE10CreateTestEv:
+        2:  457:  Test* CreateTest() override { return new TestClass; }
+------------------
+_ZN7testing8internal15TestFactoryImplI47VerificarJogoTest_XVenceCom5JogadasXEOCom4_TestE10CreateTestEv:
+        2:  457:  Test* CreateTest() override { return new TestClass; }
+------------------
+_ZN7testing8internal15TestFactoryImplI32VerificarJogoTest_Invalido3_TestE10CreateTestEv:
+        2:  457:  Test* CreateTest() override { return new TestClass; }
 ------------------
 _ZN7testing8internal15TestFactoryImplI46VerificarJogoTest_OVenceComContagemValida_TestE10CreateTestEv:
-        3:  457:  Test* CreateTest() override { return new TestClass; }
+        2:  457:  Test* CreateTest() override { return new TestClass; }
 ------------------
 _ZN7testing8internal15TestFactoryImplI47VerificarJogoTest_XGanhaDiagonalSecundaria_TestE10CreateTestEv:
-        3:  457:  Test* CreateTest() override { return new TestClass; }
+        2:  457:  Test* CreateTest() override { return new TestClass; }
 ------------------
 _ZN7testing8internal15TestFactoryImplI38VerificarJogoTest_EmpateAlternado_TestE10CreateTestEv:
-        3:  457:  Test* CreateTest() override { return new TestClass; }
+        2:  457:  Test* CreateTest() override { return new TestClass; }
 ------------------
-_ZN7testing8internal15TestFactoryImplI38VerificarJogoTest_OGanhaDiagonal2_TestE10CreateTestEv:
-        3:  457:  Test* CreateTest() override { return new TestClass; }
+_ZN7testing8internal15TestFactoryImplI45VerificarJogoTest_EmAndamentoCom8Jogadas_TestE10CreateTestEv:
+        2:  457:  Test* CreateTest() override { return new TestClass; }
 ------------------
-_ZN7testing8internal15TestFactoryImplI48VerificarJogoTest_RegrasVioladasPorJogadorO_TestE10CreateTestEv:
-        3:  457:  Test* CreateTest() override { return new TestClass; }
+_ZN7testing8internal15TestFactoryImplI35TesteVerificarJogo_EmpateComEX_TestE10CreateTestEv:
+        2:  457:  Test* CreateTest() override { return new TestClass; }
 ------------------
-_ZN7testing8internal15TestFactoryImplI34VerificarJogoTest_O_MaiorQueX_TestE10CreateTestEv:
-        3:  457:  Test* CreateTest() override { return new TestClass; }
+_ZN7testing8internal15TestFactoryImplI32TesteVerificarJogo_VitoriaX_TestE10CreateTestEv:
+        2:  457:  Test* CreateTest() override { return new TestClass; }
 ------------------
-_ZN7testing8internal15TestFactoryImplI40VerificarJogoTest_DiferencaAbsoluta_TestE10CreateTestEv:
-        3:  457:  Test* CreateTest() override { return new TestClass; }
+_ZN7testing8internal15TestFactoryImplI32TesteVerificarJogo_VitoriaO_TestE10CreateTestEv:
+        2:  457:  Test* CreateTest() override { return new TestClass; }
 ------------------
-_ZN7testing8internal15TestFactoryImplI30VerificarJogoTest_Empate1_TestE10CreateTestEv:
-        3:  457:  Test* CreateTest() override { return new TestClass; }
+_ZN7testing8internal15TestFactoryImplI35TesteVerificarJogo_EmAndamento_TestE10CreateTestEv:
+        2:  457:  Test* CreateTest() override { return new TestClass; }
 ------------------
-_ZN7testing8internal15TestFactoryImplI30VerificarJogoTest_Empate2_TestE10CreateTestEv:
-        3:  457:  Test* CreateTest() override { return new TestClass; }
-------------------
-_ZN7testing8internal15TestFactoryImplI37VerificarJogoTest_XGanhaDiagonal_TestE10CreateTestEv:
-        3:  457:  Test* CreateTest() override { return new TestClass; }
-------------------
-_ZN7testing8internal15TestFactoryImplI38VerificarJogoTest_XGanhaDiagonal2_TestE10CreateTestEv:
-        3:  457:  Test* CreateTest() override { return new TestClass; }
-------------------
-_ZN7testing8internal15TestFactoryImplI37VerificarJogoTest_OGanhaDiagonal_TestE10CreateTestEv:
-        3:  457:  Test* CreateTest() override { return new TestClass; }
-------------------
-_ZN7testing8internal15TestFactoryImplI48VerificarJogoTest_RegrasVioladasPorJogadorX_TestE10CreateTestEv:
-        3:  457:  Test* CreateTest() override { return new TestClass; }
+_ZN7testing8internal15TestFactoryImplI32TesteVerificarJogo_Invalido_TestE10CreateTestEv:
+        2:  457:  Test* CreateTest() override { return new TestClass; }
 ------------------
 _ZN7testing8internal15TestFactoryImplI35VerificarJogoTest_XGanhaLinha1_TestE10CreateTestEv:
-        3:  457:  Test* CreateTest() override { return new TestClass; }
+        2:  457:  Test* CreateTest() override { return new TestClass; }
+------------------
+_ZN7testing8internal15TestFactoryImplI48VerificarJogoTest_RegrasVioladasPorJogadorO_TestE10CreateTestEv:
+        2:  457:  Test* CreateTest() override { return new TestClass; }
+------------------
+_ZN7testing8internal15TestFactoryImplI34VerificarJogoTest_O_MaiorQueX_TestE10CreateTestEv:
+        2:  457:  Test* CreateTest() override { return new TestClass; }
+------------------
+_ZN7testing8internal15TestFactoryImplI40VerificarJogoTest_DiferencaAbsoluta_TestE10CreateTestEv:
+        2:  457:  Test* CreateTest() override { return new TestClass; }
+------------------
+_ZN7testing8internal15TestFactoryImplI30VerificarJogoTest_Empate1_TestE10CreateTestEv:
+        2:  457:  Test* CreateTest() override { return new TestClass; }
+------------------
+_ZN7testing8internal15TestFactoryImplI30VerificarJogoTest_Empate2_TestE10CreateTestEv:
+        2:  457:  Test* CreateTest() override { return new TestClass; }
+------------------
+_ZN7testing8internal15TestFactoryImplI37VerificarJogoTest_XGanhaDiagonal_TestE10CreateTestEv:
+        2:  457:  Test* CreateTest() override { return new TestClass; }
+------------------
+_ZN7testing8internal15TestFactoryImplI38VerificarJogoTest_XGanhaDiagonal2_TestE10CreateTestEv:
+        2:  457:  Test* CreateTest() override { return new TestClass; }
+------------------
+_ZN7testing8internal15TestFactoryImplI37VerificarJogoTest_OGanhaDiagonal_TestE10CreateTestEv:
+        2:  457:  Test* CreateTest() override { return new TestClass; }
+------------------
+_ZN7testing8internal15TestFactoryImplI38VerificarJogoTest_OGanhaDiagonal2_TestE10CreateTestEv:
+        2:  457:  Test* CreateTest() override { return new TestClass; }
+------------------
+_ZN7testing8internal15TestFactoryImplI48VerificarJogoTest_RegrasVioladasPorJogadorX_TestE10CreateTestEv:
+        2:  457:  Test* CreateTest() override { return new TestClass; }
 ------------------
 _ZN7testing8internal15TestFactoryImplI36VerificarJogoTest_XGanhaColuna1_TestE10CreateTestEv:
-        3:  457:  Test* CreateTest() override { return new TestClass; }
+        2:  457:  Test* CreateTest() override { return new TestClass; }
 ------------------
 _ZN7testing8internal15TestFactoryImplI35VerificarJogoTest_OGanhaLinha3_TestE10CreateTestEv:
-        3:  457:  Test* CreateTest() override { return new TestClass; }
+        2:  457:  Test* CreateTest() override { return new TestClass; }
 ------------------
 _ZN7testing8internal15TestFactoryImplI36VerificarJogoTest_OGanhaColuna3_TestE10CreateTestEv:
-        3:  457:  Test* CreateTest() override { return new TestClass; }
+        2:  457:  Test* CreateTest() override { return new TestClass; }
 ------------------
 _ZN7testing8internal15TestFactoryImplI34VerificarJogoTest_EmAndamento_TestE10CreateTestEv:
-        3:  457:  Test* CreateTest() override { return new TestClass; }
+        2:  457:  Test* CreateTest() override { return new TestClass; }
 ------------------
 _ZN7testing8internal15TestFactoryImplI35VerificarJogoTest_EmAndamento2_TestE10CreateTestEv:
-        3:  457:  Test* CreateTest() override { return new TestClass; }
+        2:  457:  Test* CreateTest() override { return new TestClass; }
 ------------------
 _ZN7testing8internal15TestFactoryImplI33VerificarJogoTest_NaoComecou_TestE10CreateTestEv:
-        3:  457:  Test* CreateTest() override { return new TestClass; }
+        2:  457:  Test* CreateTest() override { return new TestClass; }
+------------------
+_ZN7testing8internal15TestFactoryImplI30VerificarJogoTest_Empate3_TestE10CreateTestEv:
+        2:  457:  Test* CreateTest() override { return new TestClass; }
+------------------
+_ZN7testing8internal15TestFactoryImplI32VerificarJogoTest_Invalido1_TestE10CreateTestEv:
+        2:  457:  Test* CreateTest() override { return new TestClass; }
+------------------
+_ZN7testing8internal15TestFactoryImplI32VerificarJogoTest_Invalido2_TestE10CreateTestEv:
+        2:  457:  Test* CreateTest() override { return new TestClass; }
 ------------------
         -:  458:};
         -:  459:
@@ -592,8 +610,8 @@ _ZN7testing8internal15TestFactoryImplI33VerificarJogoTest_NaoComecou_TestE10Crea
         -:  475:using TearDownTestSuiteFunc = void (*)();
         -:  476:
         -:  477:struct CodeLocation {
-      105:  478:  CodeLocation(const std::string& a_file, int a_line)
-      105:  479:      : file(a_file), line(a_line) {}
+       82:  478:  CodeLocation(const std::string& a_file, int a_line)
+       82:  479:      : file(a_file), line(a_line) {}
         -:  480:
         -:  481:  std::string file;
         -:  482:  int line;
@@ -605,9 +623,9 @@ _ZN7testing8internal15TestFactoryImplI33VerificarJogoTest_NaoComecou_TestE10Crea
         -:  488:// Utility functions to help SuiteApiResolver
         -:  489:using SetUpTearDownSuiteFuncType = void (*)();
         -:  490:
-      420:  491:inline SetUpTearDownSuiteFuncType GetNotDefaultOrNull(
+      328:  491:inline SetUpTearDownSuiteFuncType GetNotDefaultOrNull(
         -:  492:    SetUpTearDownSuiteFuncType a, SetUpTearDownSuiteFuncType def) {
-     420*:  493:  return a == def ? nullptr : a;
+     328*:  493:  return a == def ? nullptr : a;
         -:  494:}
         -:  495:
         -:  496:template <typename T>
@@ -620,20 +638,20 @@ _ZN7testing8internal15TestFactoryImplI33VerificarJogoTest_NaoComecou_TestE10Crea
         -:  503:  using Test =
         -:  504:      typename std::conditional<sizeof(T) != 0, ::testing::Test, void>::type;
         -:  505:
-      105:  506:  static SetUpTearDownSuiteFuncType GetSetUpCaseOrSuite(const char* filename,
+       82:  506:  static SetUpTearDownSuiteFuncType GetSetUpCaseOrSuite(const char* filename,
         -:  507:                                                        int line_num) {
         -:  508:#ifndef GTEST_REMOVE_LEGACY_TEST_CASEAPI_
         -:  509:    SetUpTearDownSuiteFuncType test_case_fp =
-      105:  510:        GetNotDefaultOrNull(&T::SetUpTestCase, &Test::SetUpTestCase);
+       82:  510:        GetNotDefaultOrNull(&T::SetUpTestCase, &Test::SetUpTestCase);
         -:  511:    SetUpTearDownSuiteFuncType test_suite_fp =
-      105:  512:        GetNotDefaultOrNull(&T::SetUpTestSuite, &Test::SetUpTestSuite);
+       82:  512:        GetNotDefaultOrNull(&T::SetUpTestSuite, &Test::SetUpTestSuite);
         -:  513:
-     105*:  514:    GTEST_CHECK_(!test_case_fp || !test_suite_fp)
+      82*:  514:    GTEST_CHECK_(!test_case_fp || !test_suite_fp)
         -:  515:        << "Test can not provide both SetUpTestSuite and SetUpTestCase, please "
         -:  516:           "make sure there is only one present at "
     #####:  517:        << filename << ":" << line_num;
         -:  518:
-     105*:  519:    return test_case_fp != nullptr ? test_case_fp : test_suite_fp;
+      82*:  519:    return test_case_fp != nullptr ? test_case_fp : test_suite_fp;
         -:  520:#else
         -:  521:    (void)(filename);
         -:  522:    (void)(line_num);
@@ -641,20 +659,20 @@ _ZN7testing8internal15TestFactoryImplI33VerificarJogoTest_NaoComecou_TestE10Crea
         -:  524:#endif
         -:  525:  }
         -:  526:
-      105:  527:  static SetUpTearDownSuiteFuncType GetTearDownCaseOrSuite(const char* filename,
+       82:  527:  static SetUpTearDownSuiteFuncType GetTearDownCaseOrSuite(const char* filename,
         -:  528:                                                           int line_num) {
         -:  529:#ifndef GTEST_REMOVE_LEGACY_TEST_CASEAPI_
         -:  530:    SetUpTearDownSuiteFuncType test_case_fp =
-      105:  531:        GetNotDefaultOrNull(&T::TearDownTestCase, &Test::TearDownTestCase);
+       82:  531:        GetNotDefaultOrNull(&T::TearDownTestCase, &Test::TearDownTestCase);
         -:  532:    SetUpTearDownSuiteFuncType test_suite_fp =
-      105:  533:        GetNotDefaultOrNull(&T::TearDownTestSuite, &Test::TearDownTestSuite);
+       82:  533:        GetNotDefaultOrNull(&T::TearDownTestSuite, &Test::TearDownTestSuite);
         -:  534:
-     105*:  535:    GTEST_CHECK_(!test_case_fp || !test_suite_fp)
+      82*:  535:    GTEST_CHECK_(!test_case_fp || !test_suite_fp)
         -:  536:        << "Test can not provide both TearDownTestSuite and TearDownTestCase,"
         -:  537:           " please make sure there is only one present at"
     #####:  538:        << filename << ":" << line_num;
         -:  539:
-     105*:  540:    return test_case_fp != nullptr ? test_case_fp : test_suite_fp;
+      82*:  540:    return test_case_fp != nullptr ? test_case_fp : test_suite_fp;
         -:  541:#else
         -:  542:    (void)(filename);
         -:  543:    (void)(line_num);
