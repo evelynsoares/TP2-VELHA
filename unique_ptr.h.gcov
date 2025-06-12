@@ -1,7 +1,7 @@
         -:    0:Source:/usr/include/c++/13/bits/unique_ptr.h
         -:    0:Graph:teste_velha.gcno
         -:    0:Data:teste_velha.gcda
-        -:    0:Runs:2
+        -:    0:Runs:1
         -:    1:// unique_ptr implementation -*- C++ -*-
         -:    2:
         -:    3:// Copyright (C) 2008-2023 Free Software Foundation, Inc.
@@ -219,10 +219,10 @@ _ZNKSt14default_deleteINSt7__cxx1118basic_stringstreamIcSt11char_traitsIcESaIcEE
         -:  194:      }
         -:  195:
         -:  196:      _GLIBCXX23_CONSTEXPR
-      82*:  197:      pointer&   _M_ptr() noexcept { return std::get<0>(_M_t); }
+      44*:  197:      pointer&   _M_ptr() noexcept { return std::get<0>(_M_t); }
 ------------------
 _ZNSt15__uniq_ptr_implINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt14default_deleteIS5_EE6_M_ptrEv:
-       82:  197:      pointer&   _M_ptr() noexcept { return std::get<0>(_M_t); }
+       44:  197:      pointer&   _M_ptr() noexcept { return std::get<0>(_M_t); }
 ------------------
 _ZNSt15__uniq_ptr_implINSt7__cxx1118basic_stringstreamIcSt11char_traitsIcESaIcEEESt14default_deleteIS5_EE6_M_ptrEv:
     #####:  197:      pointer&   _M_ptr() noexcept { return std::get<0>(_M_t); }
@@ -434,26 +434,26 @@ _ZNSt15__uniq_ptr_implINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt14d
         -:  395:#if __cplusplus > 202002L && __cpp_constexpr_dynamic_alloc
         -:  396:      constexpr
         -:  397:#endif
-      82*:  398:      ~unique_ptr() noexcept
+      44*:  398:      ~unique_ptr() noexcept
         -:  399:      {
         -:  400:	static_assert(__is_invocable<deleter_type&, pointer>::value,
         -:  401:		      "unique_ptr's deleter must be invocable with a pointer");
-      82*:  402:	auto& __ptr = _M_t._M_ptr();
-      82*:  403:	if (__ptr != nullptr)
+      44*:  402:	auto& __ptr = _M_t._M_ptr();
+      44*:  403:	if (__ptr != nullptr)
     #####:  404:	  get_deleter()(std::move(__ptr));
-      82*:  405:	__ptr = pointer();
-      82*:  406:      }
+      44*:  405:	__ptr = pointer();
+      44*:  406:      }
 ------------------
 _ZNSt10unique_ptrINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt14default_deleteIS5_EED2Ev:
-       82:  398:      ~unique_ptr() noexcept
+       44:  398:      ~unique_ptr() noexcept
         -:  399:      {
         -:  400:	static_assert(__is_invocable<deleter_type&, pointer>::value,
         -:  401:		      "unique_ptr's deleter must be invocable with a pointer");
-       82:  402:	auto& __ptr = _M_t._M_ptr();
-       82:  403:	if (__ptr != nullptr)
+       44:  402:	auto& __ptr = _M_t._M_ptr();
+       44:  403:	if (__ptr != nullptr)
     #####:  404:	  get_deleter()(std::move(__ptr));
-       82:  405:	__ptr = pointer();
-       82:  406:      }
+       44:  405:	__ptr = pointer();
+       44:  406:      }
 ------------------
 _ZNSt10unique_ptrINSt7__cxx1118basic_stringstreamIcSt11char_traitsIcESaIcEEESt14default_deleteIS5_EED2Ev:
     #####:  398:      ~unique_ptr() noexcept

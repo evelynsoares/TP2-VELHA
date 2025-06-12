@@ -1,7 +1,7 @@
         -:    0:Source:/usr/include/gtest/gtest-assertion-result.h
         -:    0:Graph:teste_velha.gcno
         -:    0:Data:teste_velha.gcda
-        -:    0:Runs:2
+        -:    0:Runs:1
         -:    1:// Copyright 2005, Google Inc.
         -:    2:// All rights reserved.
         -:    3://
@@ -175,7 +175,7 @@
         -:  171:  }
         -:  172:
         -:  173:  // Returns true if and only if the assertion succeeded.
-       82:  174:  operator bool() const { return success_; }  // NOLINT
+       44:  174:  operator bool() const { return success_; }  // NOLINT
         -:  175:
         -:  176:  // Returns the assertion's negation. Used with EXPECT/ASSERT_FALSE.
         -:  177:  AssertionResult operator!() const;

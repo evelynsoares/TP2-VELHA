@@ -1,7 +1,7 @@
         -:    0:Source:/usr/include/c++/13/bits/move.h
         -:    0:Graph:teste_velha.gcno
         -:    0:Data:teste_velha.gcda
-        -:    0:Runs:2
+        -:    0:Runs:1
         -:    1:// Move, forward and identity for C++11 + swap -*- C++ -*-
         -:    2:
         -:    3:// Copyright (C) 2007-2023 Free Software Foundation, Inc.

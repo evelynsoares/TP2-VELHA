@@ -1,7 +1,7 @@
         -:    0:Source:/usr/include/gtest/gtest.h
         -:    0:Graph:teste_velha.gcno
         -:    0:Data:teste_velha.gcda
-        -:    0:Runs:2
+        -:    0:Runs:1
         -:    1:// Copyright 2005, Google Inc.
         -:    2:// All rights reserved.
         -:    3://
@@ -1377,11 +1377,11 @@
         -: 1373:
         -: 1374:// The helper function for {ASSERT|EXPECT}_EQ.
         -: 1375:template <typename T1, typename T2>
-       82: 1376:AssertionResult CmpHelperEQ(const char* lhs_expression,
+       44: 1376:AssertionResult CmpHelperEQ(const char* lhs_expression,
         -: 1377:                            const char* rhs_expression, const T1& lhs,
         -: 1378:                            const T2& rhs) {
-       82: 1379:  if (lhs == rhs) {
-       82: 1380:    return AssertionSuccess();
+       44: 1379:  if (lhs == rhs) {
+       44: 1380:    return AssertionSuccess();
         -: 1381:  }
         -: 1382:
     #####: 1383:  return CmpHelperEQFailure(lhs_expression, rhs_expression, lhs, rhs);
@@ -1396,10 +1396,10 @@
         -: 1392:      // and the other is the null pointer constant.
         -: 1393:      typename std::enable_if<!std::is_integral<T1>::value ||
         -: 1394:                              !std::is_pointer<T2>::value>::type* = nullptr>
-       82: 1395:  static AssertionResult Compare(const char* lhs_expression,
+       44: 1395:  static AssertionResult Compare(const char* lhs_expression,
         -: 1396:                                 const char* rhs_expression, const T1& lhs,
         -: 1397:                                 const T2& rhs) {
-       82: 1398:    return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+       44: 1398:    return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
         -: 1399:  }
         -: 1400:
         -: 1401:  // With this overloaded version, we allow anonymous enums to be used
@@ -2318,7 +2318,7 @@
         -: 2314:// namespace and has an all-caps name.
         -: 2315:int RUN_ALL_TESTS() GTEST_MUST_USE_RESULT_;
         -: 2316:
-        2: 2317:inline int RUN_ALL_TESTS() { return ::testing::UnitTest::GetInstance()->Run(); }
+        1: 2317:inline int RUN_ALL_TESTS() { return ::testing::UnitTest::GetInstance()->Run(); }
         -: 2318:
         -: 2319:GTEST_DISABLE_MSC_WARNINGS_POP_()  //  4251
         -: 2320:

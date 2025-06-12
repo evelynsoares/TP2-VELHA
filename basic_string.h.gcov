@@ -1,7 +1,7 @@
         -:    0:Source:/usr/include/c++/13/bits/basic_string.h
         -:    0:Graph:teste_velha.gcno
         -:    0:Data:teste_velha.gcda
-        -:    0:Runs:2
+        -:    0:Runs:1
         -:    1:// Components for manipulating sequences of characters -*- C++ -*-
         -:    2:
         -:    3:// Copyright (C) 1997-2023 Free Software Foundation, Inc.
@@ -356,7 +356,7 @@
         -:  352:	  for (size_type __i = 0; __i <= _S_local_capacity; ++__i)
         -:  353:	    _M_local_buf[__i] = _CharT();
         -:  354:#endif
-      82*:  355:      }
+      44*:  355:      }
         -:  356:
         -:  357:      __attribute__((__always_inline__))
         -:  358:      _GLIBCXX14_CONSTEXPR
@@ -642,16 +642,16 @@
         -:  638:      template<typename = _RequireAllocator<_Alloc>>
         -:  639:#endif
         -:  640:      _GLIBCXX20_CONSTEXPR
-       82:  641:      basic_string(const _CharT* __s, const _Alloc& __a = _Alloc())
-       82:  642:      : _M_dataplus(_M_local_data(), __a)
+       44:  641:      basic_string(const _CharT* __s, const _Alloc& __a = _Alloc())
+       44:  642:      : _M_dataplus(_M_local_data(), __a)
         -:  643:      {
         -:  644:	// NB: Not required, but considered best practice.
-       82:  645:	if (__s == 0)
+       44:  645:	if (__s == 0)
     #####:  646:	  std::__throw_logic_error(__N("basic_string: "
         -:  647:				       "construction from null is not valid"));
-       82:  648:	const _CharT* __end = __s + traits_type::length(__s);
-       82:  649:	_M_construct(__s, __end, forward_iterator_tag());
-       82:  650:      }
+       44:  648:	const _CharT* __end = __s + traits_type::length(__s);
+       44:  649:	_M_construct(__s, __end, forward_iterator_tag());
+       44:  650:      }
         -:  651:
         -:  652:      /**
         -:  653:       *  @brief  Construct string as multiple characters.
